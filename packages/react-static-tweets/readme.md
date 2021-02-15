@@ -16,7 +16,7 @@ npm install react-static-tweets
 
 ## Usage
 
-The easiest way to use this package is to render tweets client-side (which will by default fetch the tweet AST data on-the-fly).
+The easiest way to get started is to render tweets client-side (which will by default fetch the tweet AST data on-the-fly).
 
 ```tsx
 import React from 'react'

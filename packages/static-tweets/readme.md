@@ -4,7 +4,7 @@
 
 # static-tweets
 
-> Useful utilities for working with Notion data. Isomorphic.
+> Utilities for fetching and manipulating tweet ASTs.
 
 [![NPM](https://img.shields.io/npm/v/static-tweets.svg)](https://www.npmjs.com/package/static-tweets) [![Build Status](https://travis-ci.com/transitive-bullshit/react-static-tweets.svg?branch=master)](https://travis-ci.com/transitive-bullshit/react-static-tweets) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
@@ -14,24 +14,11 @@
 npm install static-tweets
 ```
 
-This package is compatible with both Node.js and client-side web usage.
+This package is compatible with Node.js.
 
 ## Usage
 
-```ts
-import { parsePageId } from 'static-tweets'
-
-parsePageId(
-  'https://www.notion.so/Notion-Tests-067dd719a912471ea9a3ac10710e7fdf'
-)
-// '067dd719-a912-471e-a9a3-ac10710e7fdf'
-
-parsePageId('About-d9ae0c6e7cad49a78e21d240cf2e3d04')
-// 'd9ae0c6e-7cad-49a7-8e21-d240cf2e3d04'
-
-parsePageId('About-d9ae0c6e7cad49a78e21d240cf2e3d04', { uuid: false })
-// 'd9ae0c6e7cad49a78e21d240cf2e3d04'
-```
+**TODO**
 
 ## Docs
 
