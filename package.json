@@ -26,6 +26,7 @@
     "docs:extract": "lerna exec --ignore react-static-tweets --ignore react-static-tweets-example api-extractor run",
     "docs:generate": "api-documenter markdown -i build -o docs",
     "bootstrap": "lerna bootstrap",
+    "prepublish": "run-s build",
     "publish": "lerna publish",
     "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('yarn') < 0) throw new Error('this package requires yarn for development')\"",
     "postinstall": "run-s bootstrap"
