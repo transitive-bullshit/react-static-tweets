@@ -66,7 +66,6 @@ export default Example({ tweetId, tweetAst }) => {
 You'll need to import some CSS styles as well. If you're using Next.js, we recommend you put these in `pages/_app.js`:
 
 ```ts
-// core styles shared by all of react-static-tweets (required)
 import 'react-static-tweets/styles.css'
 ```
 
