@@ -16,11 +16,16 @@ export interface TweetAstMap {
   [tweetId: string]: TweetAst
 }
 
+// TODO: expose ability to set partial context
+
 // Saves the tweets returned as props to the page
 export const Twitter = createContext<TwitterContext>({
   tweetAstMap: {},
   swrOptions: {
-    fetcher: (id) => fetch(`/api/get-tweet-ast/${id}`).then((r) => r.json())
+    fetcher: (id) =>
+      fetch(
+        `https://twitter-search.vercel.app/api/get-tweet-ast/${id}`
+      ).then((r) => r.json())
   }
 })
 

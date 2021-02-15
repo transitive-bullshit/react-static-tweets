@@ -2,13 +2,14 @@ import React from 'react'
 import Image from 'next/image'
 
 export default function TweetHeader({ tweet }) {
-  const url = `https://twitter.com/${tweet.username}`
+  const authorUrl = `https://twitter.com/${tweet.username}`
+  const tweetUrl = `https://twitter.com/${tweet.username}/status/${tweet.id}`
   const avatar = tweet.avatar.normal
 
   return (
     <div className='static-tweet-header'>
       <a
-        href={url}
+        href={authorUrl}
         className='static-tweet-header-avatar'
         target='_blank'
         rel='noopener noreferrer'
@@ -23,7 +24,7 @@ export default function TweetHeader({ tweet }) {
       </a>
 
       <a
-        href={url}
+        href={authorUrl}
         className='static-tweet-header-author'
         target='_blank'
         rel='noopener noreferrer'
@@ -31,6 +32,7 @@ export default function TweetHeader({ tweet }) {
         <span className='static-tweet-header-name' title={tweet.name}>
           {tweet.name}
         </span>
+
         <span
           className='static-tweet-header-username'
           title={`@${tweet.username}`}
@@ -40,7 +42,7 @@ export default function TweetHeader({ tweet }) {
       </a>
 
       <a
-        href={url}
+        href={tweetUrl}
         className='static-tweet-header-brand'
         target='_blank'
         rel='noopener noreferrer'

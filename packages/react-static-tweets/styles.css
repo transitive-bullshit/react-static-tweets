@@ -353,6 +353,8 @@
   margin-left: 0.25rem;
 }
 .static-tweet-time {
+  display: block;
+  flex: 1;
   color: var(--tweet-color-gray);
 }
 @media (any-hover: hover) {
