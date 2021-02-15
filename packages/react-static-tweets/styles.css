@@ -243,6 +243,14 @@
   word-wrap: break-word;
 }
 
+.static-tweet blockquote {
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
 .static-tweet-blockquote {
   background: var(--accents-1);
   color: var(--accents-5);
@@ -269,8 +277,8 @@
 }
 
 .static-tweet-emoji {
-  height: 18px;
-  width: 18px;
+  height: 1.2em !important;
+  width: 1.2em !important;
   margin: 0 2px;
   vertical-align: -3px;
 }
@@ -364,7 +372,6 @@
   background: var(--tweet-bg-color);
   border: var(--tweet-border);
   border-radius: 5px;
-  margin: var(--container-margin);
 }
 
 @media (any-hover: hover) {
@@ -465,7 +472,6 @@
   background: var(--tweet-bg-color);
   border: var(--tweet-border);
   border-radius: 5px;
-  margin: var(--container-margin);
 }
 .static-tweet-skeleton-content {
   padding: 1.25rem 1.25rem 0.625rem 1.25rem;
