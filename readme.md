@@ -65,7 +65,6 @@ export default Example({ tweetId, tweetAst }) => {
 You'll need to import some CSS styles as well. If you're using Next.js, we recommend you put these in `pages/_app.js`:
 
 ```ts
-// core styles shared by all of react-static-tweets (required)
 import 'react-static-tweets/styles.css'
 ```
 
@@ -81,6 +80,17 @@ You can check out an [example hosted live on Vercel](https://twitter-search.verc
 | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------------- | -------------------------------------------------- |
 | [react-static-tweets](./packages/react-static-tweets) | [![NPM](https://img.shields.io/npm/v/react-static-tweets.svg)](https://www.npmjs.com/package/react-static-tweets) | [docs](./packages/react-static-tweets) | Browser + SSR | Fast React renderer for Tweets.                    |
 | [static-tweets](./packages/static-tweets)             | [![NPM](https://img.shields.io/npm/v/static-tweets.svg)](https://www.npmjs.com/package/static-tweets)             | [docs](./docs/static-tweets.md)        | Server-side   | Utilities for fetching and manipulating tweet ASTs |
+
+## Credit
+
+My main contribution is packaging the Vercel team's excellent work into two isolated packages (`static-tweets` for server-side fetching of tweet ASTs and `react-static-tweets` for client-side rendering as well as SSR).
+
+- Inspired by this [demo](https://static-tweet.vercel.app/) from the Vercel team
+- And the underlying [repo](https://github.com/lfades/static-tweet) by [Luis Alvarez](https://github.com/lfades)
+- Most of the core code is adapted from [Guillermo Rauch's blog](https://github.com/rauchg/blog/blob/master/pages/2020/2019-in-review.js)
+- Converted JS codebase to TypeScript
+- Removed `styled-jsx` because using a flat CSS file (with a `.static-tweet` class prefix) makes bundling for NPM easier
+- Fixed some minor formatting bugs
 
 ## License
 

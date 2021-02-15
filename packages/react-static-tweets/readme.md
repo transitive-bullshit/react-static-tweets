@@ -69,6 +69,17 @@ You'll need to import some CSS styles as well. If you're using Next.js, we recom
 import 'react-static-tweets/styles.css'
 ```
 
+## Credit
+
+My main contribution is packaging the Vercel team's excellent work into two isolated packages (`static-tweets` for server-side fetching of tweet ASTs and `react-static-tweets` for client-side rendering as well as SSR).
+
+- Inspired by this [demo](https://static-tweet.vercel.app/) from the Vercel team
+- And the underlying [repo](https://github.com/lfades/static-tweet) by [Luis Alvarez](https://github.com/lfades)
+- Most of the core code is adapted from [Guillermo Rauch's blog](https://github.com/rauchg/blog/blob/master/pages/2020/2019-in-review.js)
+- Converted JS codebase to TypeScript
+- Removed `styled-jsx` because using a flat CSS file (with a `.static-tweet` class prefix) makes bundling for NPM easier
+- Fixed some minor formatting bugs
+
 ## License
 
 MIT © [Travis Fischer](https://transitivebullsh.it)
