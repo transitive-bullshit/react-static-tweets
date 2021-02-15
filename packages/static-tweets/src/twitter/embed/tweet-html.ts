@@ -71,7 +71,7 @@ function getTweetContent($) {
     } else if (
       !/\s$/.test(el.text()) &&
       el.next().children().length &&
-      !/^#/.test(el.next().text())
+      !/^[#@]/.test(el.next().text())
     ) {
       el.after($('<br>'))
     }

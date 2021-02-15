@@ -22,7 +22,7 @@ export const Tweet: React.FC<{
   )
 
   return (
-    <main className={cs('static-tweet', 'static-tweet-main', className)}>
+    <main className={cs('static-tweet', className)}>
       {tweetAst && (
         <>
           <Node components={components} node={tweetAst[0]} />

@@ -35,7 +35,7 @@
   --tweet-color-red: #e02460;
 }
 
-.static-tweet-main {
+.static-tweet {
   width: 100%;
   max-width: 550px;
   min-width: 220px;
@@ -373,7 +373,7 @@
   }
 }
 
-.static-tweet-blockquote {
+.static-tweet-body-blockquote {
   position: relative;
   padding: 1.25rem 1.25rem 0.625rem 1.25rem;
 }

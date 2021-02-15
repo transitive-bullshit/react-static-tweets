@@ -27,6 +27,7 @@ export default function TweetInfo({ tweet, className = undefined }) {
             role='img'
           />
         </div>
+
         {(tweet.heartCount || tweet.likes > 0) && (
           <span className='static-tweet-likes'>
             {tweet.heartCount || formatNumber(tweet.likes)}
