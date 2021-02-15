@@ -1,21 +1,20 @@
 import React from 'react'
 import Image from 'next/image'
-import styles from './tweet-header.module.css'
 
 export default function TweetHeader({ tweet }) {
   const url = `https://twitter.com/${tweet.username}`
   const avatar = tweet.avatar.normal
 
   return (
-    <div className={styles.header}>
+    <div className='static-tweet-header'>
       <a
         href={url}
-        className={styles.avatar}
+        className='static-tweet-header-avatar'
         target='_blank'
         rel='noopener noreferrer'
       >
         <Image
-          className={styles.rounded}
+          className='static-tweet-header-rounded'
           src={avatar}
           alt={tweet.name}
           height={36}
@@ -25,26 +24,29 @@ export default function TweetHeader({ tweet }) {
 
       <a
         href={url}
-        className={styles.author}
+        className='static-tweet-header-author'
         target='_blank'
         rel='noopener noreferrer'
       >
-        <span className={styles.name} title={tweet.name}>
+        <span className='static-tweet-header-name' title={tweet.name}>
           {tweet.name}
         </span>
-        <span className={styles.username} title={`@${tweet.username}`}>
+        <span
+          className='static-tweet-header-username'
+          title={`@${tweet.username}`}
+        >
           @{tweet.username}
         </span>
       </a>
 
       <a
         href={url}
-        className={styles.brand}
+        className='static-tweet-header-brand'
         target='_blank'
         rel='noopener noreferrer'
       >
         <div
-          className={styles['icon-twitter']}
+          className='static-tweet-header-icon-twitter'
           title='View on Twitter'
           role='img'
         />

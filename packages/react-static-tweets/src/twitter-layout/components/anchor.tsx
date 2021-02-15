@@ -1,4 +1,5 @@
 import React from 'react'
+import cs from 'classnames'
 
 const PROTOCOL = /^(https?:|)\/\//
 
@@ -27,19 +28,8 @@ export const A = (p) => (
     target='_blank'
     rel='noopener noreferrer'
     title={p.title || p.href}
-    className={p.className}
+    className={cs('static-tweet-anchor', p.className)}
   >
     {p.children[0] === p.href ? beautifyHref(p.href) : p.children}
-    <style jsx>{`
-      a {
-        color: var(--link-color);
-        text-decoration: none;
-      }
-      @media (any-hover: hover) {
-        a:hover {
-          text-decoration: underline;
-        }
-      }
-    `}</style>
   </a>
 )

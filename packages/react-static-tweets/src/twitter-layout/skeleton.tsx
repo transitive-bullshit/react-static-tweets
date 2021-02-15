@@ -1,12 +1,13 @@
 import React from 'react'
-import styles from './skeleton.module.css'
+import cs from 'classnames'
 
 export const Skeleton: React.FC<{
   children?: React.ReactNode
+  className?: string
   style?: React.CSSProperties
-}> = ({ children, style }) => {
+}> = ({ children, className, style }) => {
   return (
-    <span className={styles.skeleton} style={style}>
+    <span className={cs('static-tweet-skeleton', className)} style={style}>
       {children}
     </span>
   )

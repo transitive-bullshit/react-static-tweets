@@ -5,7 +5,6 @@ import useSWR from 'swr'
 import { useTwitter } from './twitter'
 import Node from './html/node'
 import components from './twitter-layout/components'
-import twitterTheme from './twitter-layout/twitter.module.css'
 
 export const Tweet: React.FC<{
   id: string
@@ -23,31 +22,16 @@ export const Tweet: React.FC<{
   )
 
   return (
-    <main className={cs(twitterTheme.theme, className)}>
+    <main className={cs('static-tweet', 'static-tweet-main', className)}>
       {tweetAst && (
         <>
           <Node components={components} node={tweetAst[0]} />
 
-          {caption != null ? <p>{caption}</p> : null}
+          {caption != null ? (
+            <p className='static-tweet-caption'>{caption}</p>
+          ) : null}
         </>
       )}
-
-      <style jsx>{`
-        main {
-          width: 100%;
-          max-width: 550px;
-          min-width: 220px;
-        }
-
-        p {
-          font-size: 14px;
-          color: #999;
-          text-align: center;
-          margin: 0;
-          margin-top: 10px;
-          padding: 0;
-        }
-      `}</style>
     </main>
   )
 }

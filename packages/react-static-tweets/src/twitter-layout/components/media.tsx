@@ -8,8 +8,13 @@ export const Img = ({ width, height, src, ...p }) => {
   const tweetUrl = `https://twitter.com/${tweet.username}/status/${tweet.id}`
 
   return (
-    <details>
-      <summary>
+    <details className='static-tweet-details'>
+      <summary
+        className='static-tweet-summary'
+        style={{
+          paddingBottom: `${(height / width) * 100 || 0}%`
+        }}
+      >
         <a
           href={tweetUrl}
           className='avatar'
@@ -25,29 +30,6 @@ export const Img = ({ width, height, src, ...p }) => {
           />
         </a>
       </summary>
-
-      <style jsx>{`
-        summary {
-          position: relative;
-          box-sizing: border-box;
-          padding-bottom: ${(height / width) * 100 || 0}%;
-        }
-      `}</style>
-
-      <style jsx>{`
-        details {
-          height: 100%;
-          overflow: hidden;
-        }
-        summary {
-          position: relative;
-          height: 100%;
-          list-style: none;
-        }
-        summary::-webkit-details-marker {
-          display: none;
-        }
-      `}</style>
     </details>
   )
 }
