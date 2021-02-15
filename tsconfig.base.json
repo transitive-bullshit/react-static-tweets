@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "noEmitOnError": true,
+
+    "strict": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "isolatedModules": false,
+    "traceResolution": false,
+    "listEmittedFiles": false,
+    "listFiles": false,
+    "pretty": true,
+
+    "lib": ["ESNext", "ES2019", "ESNext.Array"],
+
+    "baseUrl": ".",
+    "paths": {
+      "*": ["types/*"]
+    }
+  }
+}
