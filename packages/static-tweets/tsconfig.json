@@ -4,7 +4,8 @@
     "composite": true,
     "rootDir": "src",
     "outDir": "build/esm",
-    "tsBuildInfoFile": "build/esm/index.tsbuildinfo"
+    "tsBuildInfoFile": "build/esm/index.tsbuildinfo",
+    "lib": ["DOM"]
   },
   "include": ["src"]
 }
