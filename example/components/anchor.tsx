@@ -3,7 +3,7 @@ import { forwardRef } from 'react'
 import styles from './styles.module.css'
 
 export const A = forwardRef(
-  ({ children, href, title, blank = true, onClick }: any, ref) => (
+  ({ children, href, title, blank = true, onClick }: any, ref: any) => (
     <a
       ref={ref}
       href={href}
