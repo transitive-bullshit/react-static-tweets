@@ -77,6 +77,8 @@ Here's a full [Next.js example project](https://github.com/transitive-bullshit/r
 
 You can check out an [example hosted live on Vercel](https://react-static-tweets.vercel.app). A more in-depth example via [twitter search](https://twitter-search.vercel.app) which provides an Algolia search UI on top of my personal twitter history ([@transitive_bs](https://twitter.com/transitive_bs)).
 
+For an example of more advanced usage and customization, check out [nextjs-notion-starter-kit](https://github.com/transitive-bullshit/nextjs-notion-starter-kit/blob/main/components/NotionPage.tsx#L164).
+
 ## Packages
 
 | Package                                               | NPM                                                                                                               | Docs                                   | Environment   | Description                     |
