@@ -1,5 +1,7 @@
 <p align="center">
-  <img alt="Twitter Static Tweets" src="https://raw.githubusercontent.com/transitive-bullshit/react-static-tweets/master/media/notion-ts.png" width="689">
+  <a href="https://react-static-tweets.vercel.app/1352687755621351425">
+    <img alt="Twitter Static Tweets" src="https://raw.githubusercontent.com/transitive-bullshit/react-static-tweets/master/example/demo.jpg" width="550">
+  </a>
 </p>
 
 # static-tweets
@@ -18,7 +20,19 @@ This package is compatible with Node.js.
 
 ## Usage
 
-**TODO**
+```ts
+import [ fetchTweetAst } from 'static-tweets'
+import { Tweet } from 'react-static-tweets'
+
+const tweetId = '1358199505280262150'
+
+async function example (tweetId) {
+  const tweetAst = await fetchTweetAst(tweetId)
+
+  // tweetAst is a JSON representation of this tweet's contents
+  // which `react-static-tweets` can use to render
+}
+```
 
 ## Docs
 

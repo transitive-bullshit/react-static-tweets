@@ -1,5 +1,7 @@
 <p align="center">
-  <img alt="Twitter Static Tweets" src="https://raw.githubusercontent.com/transitive-bullshit/react-static-tweets/master/media/notion-ts.png" width="689">
+  <a href="https://react-static-tweets.vercel.app/1352687755621351425">
+    <img alt="Twitter Static Tweets" src="https://raw.githubusercontent.com/transitive-bullshit/react-static-tweets/master/example/demo.jpg" width="550">
+  </a>
 </p>
 
 # React Static Tweets
