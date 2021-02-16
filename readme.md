@@ -87,7 +87,7 @@ You can check out an [example hosted live on Vercel](https://react-static-tweets
 
 ## Credit
 
-My main contribution is packaging the Vercel team's excellent work into two isolated packages, `static-tweets` for server-side fetching of tweet ASTs and `react-static-tweets` for client-side rendering as well as SSR.
+My main contribution is packaging the Vercel team's excellent work into two isolated packages: `static-tweets` for server-side fetching of tweet ASTs and `react-static-tweets` for client-side rendering as well as SSR.
 
 - Inspired by this [demo](https://static-tweet.vercel.app/) from the Vercel team
 - And the underlying [repo](https://github.com/lfades/static-tweet) by [Luis Alvarez](https://github.com/lfades)

@@ -20,6 +20,11 @@ export default function App({ Component, pageProps }) {
 
         <meta name='description' content='React static tweets demo.' />
 
+        <meta name='theme-color' content='#70B7FD' />
+        <meta property='og:type' content='website' />
+
+        <link rel='shortcut icon' href='/favicon.png' />
+
         <title>React Static Tweets Demo</title>
       </Head>
 
