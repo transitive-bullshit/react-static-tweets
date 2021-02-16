@@ -15,7 +15,7 @@ This project takes Vercel's work on [static tweet rendering](https://static-twee
 ## Features
 
 - ⚡ **Fast** - 10-100x faster than using Twitter's iframe widget.
-- 🔥 **Solid** - Used in production by [Twitter Search](https://twitter-search.vercel.app) and [react-notion-x](https://transitivebullsh.it/nextjs-notion-starter-kit).
+- 🔥 **Solid** - Used in production by [Super.so](https://super.so), [Twitter Search](https://twitter-search.vercel.app) and [react-notion-x](https://transitivebullsh.it/nextjs-notion-starter-kit).
 - 🚀 **Simple** - TypeScript + React.
 
 ## Usage
