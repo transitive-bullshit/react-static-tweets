@@ -2,11 +2,13 @@
   <img alt="Twitter Static Tweets" src="https://raw.githubusercontent.com/transitive-bullshit/react-static-tweets/master/media/notion-ts.png" width="689">
 </p>
 
-# Twitter Static Tweets
+# React Static Tweets
 
 > Extremely fast static renderer for tweets. TS batteries included. ⚡️
 
 [![NPM](https://img.shields.io/npm/v/notion-client.svg)](https://www.npmjs.com/package/notion-client) [![Build Status](https://travis-ci.com/transitive-bullshit/react-static-tweets.svg?branch=master)](https://travis-ci.com/transitive-bullshit/react-static-tweets) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
+
+This project takes the awesome work that the Vercel team's done on [static tweet rendering](https://static-tweet.vercel.app) and packages it up into two easy-to-use NPM packages.
 
 ## Features
 
@@ -70,25 +72,25 @@ import 'react-static-tweets/styles.css'
 
 ## Next.js Example
 
-Here's a full [Next.js example project](https://github.com/transitive-bullshit/react-static-tweets/tree/master/example) with the most important code in [`pages/[pageId]`.tsx](https://github.com/transitive-bullshit/react-static-tweets/blob/master/example/pages/%5BpageId%5D.tsx).
+Here's a full [Next.js example project](https://github.com/transitive-bullshit/react-static-tweets/tree/master/example) with the most important code in [`pages/[tweetId]`.tsx](https://github.com/transitive-bullshit/react-static-tweets/blob/master/example/pages/%5BtweetId%5D.tsx).
 
-You can check out an [example hosted live on Vercel](https://twitter-search.vercel.app) which provides an Algolia search UI on top of my personal twitter history ([@transitive_bs](https://twitter.com/transitive_bs)).
+You can check out an [example hosted live on Vercel](https://react-static-tweets.vercel.app). A more in-depth example via [twitter search](https://twitter-search.vercel.app) which provides an Algolia search UI on top of my personal twitter history ([@transitive_bs](https://twitter.com/transitive_bs)).
 
 ## Packages
 
-| Package                                               | NPM                                                                                                               | Docs                                   | Environment   | Description                                        |
-| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------------- | -------------------------------------------------- |
-| [react-static-tweets](./packages/react-static-tweets) | [![NPM](https://img.shields.io/npm/v/react-static-tweets.svg)](https://www.npmjs.com/package/react-static-tweets) | [docs](./packages/react-static-tweets) | Browser + SSR | Fast React renderer for Tweets.                    |
-| [static-tweets](./packages/static-tweets)             | [![NPM](https://img.shields.io/npm/v/static-tweets.svg)](https://www.npmjs.com/package/static-tweets)             | [docs](./docs/static-tweets.md)        | Server-side   | Utilities for fetching and manipulating tweet ASTs |
+| Package                                               | NPM                                                                                                               | Docs                                   | Environment   | Description                                         |
+| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------------- | --------------------------------------------------- |
+| [react-static-tweets](./packages/react-static-tweets) | [![NPM](https://img.shields.io/npm/v/react-static-tweets.svg)](https://www.npmjs.com/package/react-static-tweets) | [docs](./packages/react-static-tweets) | Browser + SSR | Fast React renderer for Tweets.                     |
+| [static-tweets](./packages/static-tweets)             | [![NPM](https://img.shields.io/npm/v/static-tweets.svg)](https://www.npmjs.com/package/static-tweets)             | [docs](./docs/static-tweets.md)        | Node.js       | Utilities for fetching and manipulating tweet ASTs. |
 
 ## Credit
 
-My main contribution is packaging the Vercel team's excellent work into two isolated packages (`static-tweets` for server-side fetching of tweet ASTs and `react-static-tweets` for client-side rendering as well as SSR).
+My main contribution is packaging the Vercel team's excellent work into two isolated packages, `static-tweets` for server-side fetching of tweet ASTs and `react-static-tweets` for client-side rendering as well as SSR.
 
 - Inspired by this [demo](https://static-tweet.vercel.app/) from the Vercel team
 - And the underlying [repo](https://github.com/lfades/static-tweet) by [Luis Alvarez](https://github.com/lfades)
 - Most of the core code is adapted from [Guillermo Rauch's blog](https://github.com/rauchg/blog/blob/master/pages/2020/2019-in-review.js)
-- Converted JS codebase to TypeScript
+- Converted the JS codebase to TypeScript
 - Removed `styled-jsx` because using a flat CSS file (with a `.static-tweet` class prefix) makes bundling for NPM easier
 - Fixed some minor formatting bugs
 

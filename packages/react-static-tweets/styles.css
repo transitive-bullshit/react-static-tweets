@@ -51,7 +51,7 @@
 }
 
 .static-tweet-anchor {
-  color: var(--link-color);
+  color: var(--tweet-link-color);
   text-decoration: none;
 }
 

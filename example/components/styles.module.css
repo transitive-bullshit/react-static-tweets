@@ -1,0 +1,99 @@
+@media (max-width: 420px) {
+  .githubCorner {
+    display: none;
+  }
+}
+
+.githubCorner:hover .octoArm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+.anchor {
+  --tweet-link-color: #2b7bb9;
+  color: var(--tweet-link-color);
+}
+
+.anchor:hover {
+  --tweet-link-color-hover: #3b94d9;
+  text-decoration: none;
+  color: var(--tweet-link-color-hover);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.random-tweet-container {
+  padding: 2em 0;
+}
+
+.random-tweet {
+  font-size: 0.875rem;
+}
+
+.random-tweet > span {
+  margin-left: 0.5rem;
+  color: #ff1a1a;
+  animation: changed 0.5s;
+}
+
+.generate-tweet-button {
+  --accents-5: #666666;
+  height: 1rem;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  color: var(--accents-5);
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-top: 0.25rem;
+}
+
+.generate-tweet-button:hover {
+  text-decoration: none;
+}
+
+.generate-tweet-button.tweet-loading {
+  cursor: wait;
+  text-decoration: none;
+  animation: changed 1s;
+}
+
+.id {
+  animation: updated 1.7s;
+}
+
+@keyframes updated {
+  30% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes changed {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
