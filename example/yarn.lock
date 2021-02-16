@@ -3918,10 +3918,10 @@ react-refresh@0.8.3:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
-react-static-tweets@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/react-static-tweets/-/react-static-tweets-0.2.4.tgz#469ad679b5b616d5f225b788ae361f002c5351ae"
-  integrity sha512-oX8hIMnqeuWh+gHc3bVSadAzLqCvM1KBjDyuVWYTos5ejx6QIwK9mxv+63tztFQsB4kX4KEtAWLXprCLohRIWg==
+react-static-tweets@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/react-static-tweets/-/react-static-tweets-0.2.5.tgz#9fdb0a7cd2e55d594937d97b8e53a8403e5326ee"
+  integrity sha512-VQ4bTgbl18+5zlAs0KUfhagSx9BY7AzptXM0F9it3pu2acGBZlEHBKxrKbOqaX+BByekFp6tZPOM68Pa/DeZqA==
   dependencies:
     classnames "^2.2.6"
     styled-jsx "^3.4.2"

@@ -4,6 +4,8 @@ import { GitHubShareButton } from './GitHubShareButton'
 import { RandomTweet } from './RandomTweet'
 import styles from './styles.module.css'
 
+const defaultRandomTweet = '1358199505280262150'
+
 export const Page: React.FC<{ tweetId: string; tweetAst?: any }> = ({
   tweetId,
   tweetAst
@@ -15,7 +17,7 @@ export const Page: React.FC<{ tweetId: string; tweetAst?: any }> = ({
 
         <Tweet id={tweetId} ast={tweetAst} />
 
-        <RandomTweet initialId='1253411282608205826' />
+        <RandomTweet initialId={defaultRandomTweet} />
       </div>
 
       <GitHubShareButton />
