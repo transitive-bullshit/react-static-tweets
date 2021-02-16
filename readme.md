@@ -80,10 +80,10 @@ You can check out an [example hosted live on Vercel](https://react-static-tweets
 
 ## Packages
 
-| Package                                               | NPM                                                                                                               | Docs                                   | Environment   | Description                                         |
-| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------------- | --------------------------------------------------- |
-| [react-static-tweets](./packages/react-static-tweets) | [![NPM](https://img.shields.io/npm/v/react-static-tweets.svg)](https://www.npmjs.com/package/react-static-tweets) | [docs](./packages/react-static-tweets) | Browser + SSR | Fast React renderer for Tweets.                     |
-| [static-tweets](./packages/static-tweets)             | [![NPM](https://img.shields.io/npm/v/static-tweets.svg)](https://www.npmjs.com/package/static-tweets)             | [docs](./docs/static-tweets.md)        | Node.js       | Utilities for fetching and manipulating tweet ASTs. |
+| Package                                               | NPM                                                                                                               | Docs                                   | Environment   | Description                     |
+| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------------- | ------------------------------- |
+| [react-static-tweets](./packages/react-static-tweets) | [![NPM](https://img.shields.io/npm/v/react-static-tweets.svg)](https://www.npmjs.com/package/react-static-tweets) | [docs](./packages/react-static-tweets) | Browser + SSR | Fast React renderer for Tweets. |
+| [static-tweets](./packages/static-tweets)             | [![NPM](https://img.shields.io/npm/v/static-tweets.svg)](https://www.npmjs.com/package/static-tweets)             | [docs](./docs/static-tweets.md)        | Node.js       | Fetches tweet ASTs.             |
 
 ## Credit
 
