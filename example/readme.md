@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Twitter Static Tweets" src="https://raw.githubusercontent.com/transitive-bullshit/react-static-tweets/master/media/notion-ts.png" width="689">
+  <img alt="React Static Tweets" src="https://raw.githubusercontent.com/transitive-bullshit/react-static-tweets/master/media/notion-ts.png" width="689">
 </p>
 
 > Simple demo showing how you can render tweets via SSR with Next.js and `react-static-tweets`.

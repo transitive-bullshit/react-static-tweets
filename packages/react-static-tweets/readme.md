@@ -1,10 +1,10 @@
 <p align="center">
   <a href="https://react-static-tweets.vercel.app/1352687755621351425">
-    <img alt="Twitter Static Tweets" src="https://raw.githubusercontent.com/transitive-bullshit/react-static-tweets/master/example/demo.jpg" width="550">
+    <img alt="React Static Tweets" src="https://raw.githubusercontent.com/transitive-bullshit/react-static-tweets/master/example/demo.jpg" width="550">
   </a>
 </p>
 
-# Twitter Static Tweets
+# React Static Tweets
 
 > Extremely fast static renderer for tweets.
 
