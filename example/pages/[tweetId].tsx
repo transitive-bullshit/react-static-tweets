@@ -23,7 +23,7 @@ export const getStaticProps = async (context) => {
 
 export async function getStaticPaths() {
   return {
-    paths: [],
+    paths: ['/1352687755621351425', '/1358199505280262150'],
     fallback: true
   }
 }
