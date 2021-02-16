@@ -10,7 +10,15 @@
 
 [![NPM](https://img.shields.io/npm/v/notion-client.svg)](https://www.npmjs.com/package/notion-client) [![Build Status](https://travis-ci.com/transitive-bullshit/react-static-tweets.svg?branch=master)](https://travis-ci.com/transitive-bullshit/react-static-tweets) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
+## Why?
+
+Twitter's embedding SDK is horribly slow and inefficient. For embedding tweets on your site (including SSR), this solution is 10-100x faster! 🔥
+
 This project takes Vercel's work on [static tweet rendering](https://static-tweet.vercel.app) and packages it up into two easy-to-use NPM packages.
+
+To see the difference this makes in practice, here's a [page using the official Twitter iframe SDK](https://test-suite-trillcyborg-xyz-super-static-ei3ayge5v.vercel.app/7b7f063709034186adbfb46f455d5065) and here's the [optimized version using react-static-tweets](https://test-suite-trillcyborg-xyz-super-static-m9ptjhkfv.vercel.app/7b7f063709034186adbfb46f455d5065).
+
+This project is already being used in production by [super.so](https://super.so).
 
 ## Features
 
