@@ -18,12 +18,12 @@ This project takes Vercel's work on [static tweet rendering](https://static-twee
 
 **Here's a [before](https://test-suite-trillcyborg-xyz-super-static-ei3ayge5v.vercel.app/7b7f063709034186adbfb46f455d5065) and [after](https://test-suite-trillcyborg-xyz-super-static-m9ptjhkfv.vercel.app/7b7f063709034186adbfb46f455d5065)** which makes it clear how big of a difference this makes in practice. The first page uses Twitter's official iframe embedding SDK, and the second page uses `react-static-tweets`.
 
-This project is being used in production by [super.so](https://super.so) and [addpotion.so](https://addpotion.so).
+This project is being used in production by [super.so](https://super.so).
 
 ## Features
 
 - ⚡ **Fast** - 10-100x faster than using Twitter's iframe widget.
-- 🔥 **Solid** - Used in production by [Super.so](https://super.so), [addpotion.so](https://addpotion.so), [Twitter Search](https://twitter-search.vercel.app) and [react-notion-x](https://transitivebullsh.it/nextjs-notion-starter-kit).
+- 🔥 **Solid** - Used in production by [super.so](https://super.so), [addpotion.so](https://addpotion.so), [Twitter Search](https://twitter-search.vercel.app) and [react-notion-x](https://transitivebullsh.it/nextjs-notion-starter-kit).
 - 🚀 **Simple** - TypeScript + React.
 
 ## Usage
