@@ -2,7 +2,7 @@ import { fetchTweetAst } from 'static-tweets'
 import { Page } from 'components/Page'
 
 // default tweet to show on the homepage
-const tweetId = '1361462293918343169'
+const tweetId = '1352687755621351425'
 
 export const getStaticProps = async () => {
   try {
