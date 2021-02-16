@@ -17,11 +17,11 @@ class Context {
   }
 }
 
-export async function fetchTweetAst(tweetId) {
+export async function fetchTweetAst(tweetId: string): Promise<any> {
   const tweetHtml = await fetchTweetHtml(tweetId)
   const tweet = tweetHtml && getTweetData(tweetHtml)
 
-  if (!tweet) return
+  if (!tweet) return null
 
   const context = new Context()
   const html = await getTweetHtml(tweet, context)
