@@ -21,7 +21,7 @@ This project takes the awesome work that the Vercel team's done on [static tweet
 
 ## Usage
 
-The easiest way to get started is to render tweets client-side (which will by default fetch the tweet AST data on-the-fly).
+The easiest way to get started is to render tweets client-side (which will fetch the tweet data on-the-fly).
 
 ```tsx
 import React from 'react'
@@ -66,7 +66,7 @@ export default Example({ tweetId, tweetAst }) => {
 
 ## Styles
 
-You'll need to import some CSS styles as well. If you're using Next.js, we recommend you put these in `pages/_app.js`:
+You'll need to import some CSS styles as well. If you're using Next.js, we recommend you put these in `pages/_app`:
 
 ```ts
 import 'react-static-tweets/styles.css'
