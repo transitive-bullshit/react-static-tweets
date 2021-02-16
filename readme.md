@@ -6,18 +6,17 @@
 
 # React Static Tweets
 
-> Extremely fast static renderer for tweets. TS batteries included. ⚡️
+> Extremely fast static renderer for tweets.
 
 [![NPM](https://img.shields.io/npm/v/notion-client.svg)](https://www.npmjs.com/package/notion-client) [![Build Status](https://travis-ci.com/transitive-bullshit/react-static-tweets.svg?branch=master)](https://travis-ci.com/transitive-bullshit/react-static-tweets) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
-This project takes the awesome work that the Vercel team's done on [static tweet rendering](https://static-tweet.vercel.app) and packages it up into two easy-to-use NPM packages.
+This project takes Vercel's work on [static tweet rendering](https://static-tweet.vercel.app) and packages it up into two easy-to-use NPM packages.
 
 ## Features
 
 - 🚀 **Simple** - TypeScript + React.
 - ⚡ **Fast** - 10-100x faster than using Twitter's embed widget iframe.
-  - 95-100% Lighthouse scores.
-- 🔥 **Solid** - Used in production by [Twitter Search](https://twitter-search.vercel.app) and [react-notion-x](https://transitivebullsh.it).
+- 🔥 **Solid** - Used in production by [Twitter Search](https://twitter-search.vercel.app) and [react-notion-x](https://transitivebullsh.it/nextjs-notion-starter-kit).
 
 ## Usage
 
