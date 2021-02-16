@@ -23,7 +23,7 @@ This project is being used in production by [super.so](https://super.so).
 ## Features
 
 - ⚡ **Fast** - 10-100x faster than using Twitter's iframe widget.
-- 🔥 **Solid** - Used in production by [Super.so](https://super.so), [Twitter Search](https://twitter-search.vercel.app) and [react-notion-x](https://transitivebullsh.it/nextjs-notion-starter-kit).
+- 🔥 **Solid** - Used in production by [super.so](https://super.so), [addpotion.so](https://addpotion.so), [Twitter Search](https://twitter-search.vercel.app) and [react-notion-x](https://transitivebullsh.it/nextjs-notion-starter-kit).
 - 🚀 **Simple** - TypeScript + React.
 
 ## Usage
