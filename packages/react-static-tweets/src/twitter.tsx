@@ -31,13 +31,13 @@ export function useTwitterContext () {
   return useContext(TwitterContext)
 }
 
-type TwitterProviderProps = {
+type TwitterContextProviderProps = {
   value: Partial<TwitterContextValue>
   children?: ReactNode
 }
 
 // allows partials that override outer providers
-export function TwitterContextProvider ({ value, children }: TwitterProviderProps) {
+export function TwitterContextProvider ({ value, children }: TwitterContextProviderProps) {
   const currentContext = useContext(TwitterContext)
   const mergedContext = {
     tweetAstMap: {
