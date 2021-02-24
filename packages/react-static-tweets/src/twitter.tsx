@@ -1,4 +1,4 @@
-import React, { Consumer, createContext, ProviderExoticComponent, ProviderProps, ReactNode, useContext } from 'react'
+import React, { Consumer, createContext, Provider, useContext } from 'react'
 import { ConfigInterface } from 'swr'
 
 // TODO: make this more specific
@@ -27,10 +27,22 @@ const OriginalTwitter = createContext<TwitterContext>({
   }
 })
 
-type TwitterProviderProps = {
-  value: Partial<TwitterContext>
-  children?: ReactNode
+export function useTwitter () {
+  const twitterContext = useContext(OriginalTwitter)
+
+  return twitterContext
 }
+
+type OverridingProvider<T> = Provider<Partial<T>>
+
+type OverridableContext<T> = {
+  Provider: OverridingProvider<T>,
+  Consumer: Consumer<T>,
+  displayName?: string
+}
+
+// TODO: this is more correct, but maybe it is too verbose?
+type TwitterProviderProps = Parameters<OverridableContext<TwitterContext>['Provider']>[0]
 
 // allows partials that override outer providers
 function OverridingTwitterProvider ({ value, children }: TwitterProviderProps) {
@@ -44,22 +56,8 @@ function OverridingTwitterProvider ({ value, children }: TwitterProviderProps) {
 // TODO: why this property? (see react ts definition of ExoticComponent)
 OverridingTwitterProvider.$$typeof = OriginalTwitter.Provider.$$typeof
 
-type OverridingProvider<T> = ProviderExoticComponent<ProviderProps<Partial<T>>>
-
-type OverridableContext<T> = {
-  Provider: OverridingProvider<T>,
-  Consumer: Consumer<T>,
-  displayName?: string
-}
-
 export const Twitter: OverridableContext<TwitterContext> = {
   Provider: OverridingTwitterProvider,
   Consumer: OriginalTwitter.Consumer,
   displayName: OriginalTwitter.displayName
-}
-
-export function useTwitter () {
-  const twitterContext = useContext(OriginalTwitter)
-
-  return twitterContext
 }
