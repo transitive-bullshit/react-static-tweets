@@ -1,10 +1,10 @@
-import React, { Consumer, createContext, Provider, useContext } from 'react'
+import React, { createContext, ReactNode, useContext } from 'react'
 import { ConfigInterface } from 'swr'
 
 // TODO: make this more specific
 export type TweetAst = Array<any>
 
-export interface TwitterContext {
+export type TwitterContextValue = {
   // static tweet ast info
   tweetAstMap: TweetAstMap
 
@@ -12,12 +12,12 @@ export interface TwitterContext {
   swrOptions: ConfigInterface
 }
 
-export interface TweetAstMap {
+export type TweetAstMap = {
   [tweetId: string]: TweetAst
 }
 
 // Saves the tweets returned as props to the page
-const OriginalTwitter = createContext<TwitterContext>({
+const TwitterContext = createContext<TwitterContextValue>({
   tweetAstMap: {},
   swrOptions: {
     fetcher: (id) =>
@@ -27,37 +27,31 @@ const OriginalTwitter = createContext<TwitterContext>({
   }
 })
 
-export function useTwitter () {
-  const twitterContext = useContext(OriginalTwitter)
-
-  return twitterContext
+export function useTwitterContext () {
+  return useContext(TwitterContext)
 }
 
-type OverridingProvider<T> = Provider<Partial<T>>
-
-type OverridableContext<T> = {
-  Provider: OverridingProvider<T>,
-  Consumer: Consumer<T>,
-  displayName?: string
+type TwitterProviderProps = {
+  value: Partial<TwitterContextValue>
+  children?: ReactNode
 }
-
-// TODO: this is more correct, but maybe it is too verbose?
-type TwitterProviderProps = Parameters<OverridableContext<TwitterContext>['Provider']>[0]
 
 // allows partials that override outer providers
-function OverridingTwitterProvider ({ value, children }: TwitterProviderProps) {
-  const currentContext = useContext(OriginalTwitter)
+export function TwitterContextProvider ({ value, children }: TwitterProviderProps) {
+  const currentContext = useContext(TwitterContext)
   const mergedContext = {
-    ...currentContext,
-    ...value
+    tweetAstMap: {
+      ...value.tweetAstMap,
+      ...currentContext.tweetAstMap
+    },
+    swrOptions: {
+      ...value.swrOptions,
+      ...currentContext.swrOptions
+    }
   }
-  return <OriginalTwitter.Provider value={mergedContext}>{children}</OriginalTwitter.Provider>
-}
-// TODO: why this property? (see react ts definition of ExoticComponent)
-OverridingTwitterProvider.$$typeof = OriginalTwitter.Provider.$$typeof
-
-export const Twitter: OverridableContext<TwitterContext> = {
-  Provider: OverridingTwitterProvider,
-  Consumer: OriginalTwitter.Consumer,
-  displayName: OriginalTwitter.displayName
+  return (
+    <TwitterContext.Provider value={mergedContext}>
+      {children}
+    </TwitterContext.Provider>
+  )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import cs from 'classnames'
 import useSWR from 'swr'
 
-import { useTwitter } from './twitter'
+import { useTwitterContext } from './twitter'
 import Node from './html/node'
 import components from './twitter-layout/components'
 
@@ -14,7 +14,7 @@ export const Tweet: React.FC<{
   // TODO: understand what br is used for
   // br?: string
 }> = ({ id, ast, caption, className }) => {
-  const twitter = useTwitter()
+  const twitter = useTwitterContext()
   const { data: tweetAst } = useSWR(
     id,
     (id) => ast || twitter.tweetAstMap[id] || twitter.swrOptions.fetcher(id),
