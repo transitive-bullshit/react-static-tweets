@@ -37,7 +37,10 @@ type TwitterContextProviderProps = {
 }
 
 // allows partials that override outer providers
-export function TwitterContextProvider ({ value, children }: TwitterContextProviderProps) {
+export function TwitterContextProvider ({
+  value,
+  children
+}: TwitterContextProviderProps) {
   const currentContext = useContext(TwitterContext)
   const mergedContext = {
     tweetAstMap: {
@@ -55,3 +58,5 @@ export function TwitterContextProvider ({ value, children }: TwitterContextProvi
     </TwitterContext.Provider>
   )
 }
+
+export const TwitterContextConsumer = TwitterContext.Consumer
