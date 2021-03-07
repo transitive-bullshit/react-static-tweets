@@ -21,13 +21,13 @@ const TwitterContext = createContext<TwitterContextValue>({
   tweetAstMap: {},
   swrOptions: {
     fetcher: (id) =>
-      fetch(`https://twitter-search.vercel.app/api/get-tweet-ast/${id}`).then(
-        (r) => r.json()
-      )
+      fetch(
+        `https://twitter-search.vercel.app/api/get-tweet-ast/${id}`
+      ).then((r) => r.json())
   }
 })
 
-export function useTwitterContext () {
+export function useTwitterContext() {
   return useContext(TwitterContext)
 }
 
@@ -37,7 +37,7 @@ type TwitterContextProviderProps = {
 }
 
 // allows partials that override outer providers
-export function TwitterContextProvider ({
+export function TwitterContextProvider({
   value,
   children
 }: TwitterContextProviderProps) {

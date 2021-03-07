@@ -20,7 +20,6 @@
     "dev": "run-s start",
     "pretest": "run-s build",
     "test": "run-s test:*",
-    "test:unit": "lerna run test",
     "test:prettier": "prettier '**/*.{js,jsx,json,ts,tsx}' --check",
     "docs": "run-s docs:extract docs:generate",
     "docs:extract": "lerna exec --ignore react-static-tweets --ignore react-static-tweets-example api-extractor run",

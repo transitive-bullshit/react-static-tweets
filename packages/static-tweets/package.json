@@ -11,9 +11,6 @@
   "engines": {
     "node": ">=12"
   },
-  "scripts": {
-    "test": "ava -v 'build/cjs/**/*.test.js'"
-  },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.5.0",
     "@vercel/fetch": "^6.1.0",
