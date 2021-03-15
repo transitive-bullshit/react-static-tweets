@@ -3,3 +3,5 @@
 .vercel/
 build/
 docs/
+node_modules/
+lerna.json
