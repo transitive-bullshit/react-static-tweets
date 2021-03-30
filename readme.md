@@ -26,6 +26,14 @@ This project is being used in production by [super.so](https://s.super.so/x).
 - 🔥 **Solid** - Used in production by [super.so](https://s.super.so/x), [addpotion.so](https://addpotion.so), [Twitter Search](https://twitter-search.vercel.app) and [react-notion-x](https://transitivebullsh.it/nextjs-notion-starter-kit).
 - 🚀 **Simple** - TypeScript + React.
 
+## Install
+
+```bash
+npm install react-static-tweets static-tweets date-fns
+# or
+yarn add react-static-tweets static-tweets date-fns
+```
+
 ## Usage
 
 The easiest way to get started is to render tweets client-side (which will fetch the tweet data on-the-fly).
@@ -71,14 +79,14 @@ export default function Example({ tweetId, tweetAst }) {
 }
 ```
 
-Don't forget to add below code in `next.config.js` file of your app, as `react-static-tweets` uses `next/Image` component to load the images:
+Add `pbs.twimg.com` to your `next.config.js` since we use `next/image` to load images.
 
-```
+```js
 module.exports = {
-    images: {
-        domains: ["pbs.twimg.com"],
-    },
-};
+  images: {
+    domains: ['pbs.twimg.com']
+  }
+}
 ```
 
 ## Styles
