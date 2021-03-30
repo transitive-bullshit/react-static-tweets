@@ -8,7 +8,7 @@
 
 > Extremely fast static renderer for tweets.
 
-[![NPM](https://img.shields.io/npm/v/notion-client.svg)](https://www.npmjs.com/package/notion-client) [![Build Status](https://travis-ci.com/transitive-bullshit/react-static-tweets.svg?branch=master)](https://travis-ci.com/transitive-bullshit/react-static-tweets) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
+[![NPM](https://img.shields.io/npm/v/react-static-tweets.svg)](https://www.npmjs.com/package/react-static-tweets) [![Build Status](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/build.yml/badge.svg)](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/build.yml) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
 ## Why?
 

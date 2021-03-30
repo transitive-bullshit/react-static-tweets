@@ -8,7 +8,7 @@
 
 > Utilities for fetching and manipulating tweet ASTs.
 
-[![NPM](https://img.shields.io/npm/v/static-tweets.svg)](https://www.npmjs.com/package/static-tweets) [![Build Status](https://travis-ci.com/transitive-bullshit/react-static-tweets.svg?branch=master)](https://travis-ci.com/transitive-bullshit/react-static-tweets) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
+[![NPM](https://img.shields.io/npm/v/static-tweets.svg)](https://www.npmjs.com/package/static-tweets) [![Build Status](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/build.yml/badge.svg)](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/build.yml) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
 ## Install
 
