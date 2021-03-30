@@ -71,6 +71,16 @@ export default function Example({ tweetId, tweetAst }) {
 }
 ```
 
+Don't forget to add below code in `next.config.js` file of your app, as `react-static-tweets` uses `next/Image` component to load the images:
+
+```
+module.exports = {
+    images: {
+        domains: ["pbs.twimg.com"],
+    },
+};
+```
+
 ## Styles
 
 You'll need to import some CSS styles as well. If you're using Next.js, we recommend you put these in `pages/_app`:
