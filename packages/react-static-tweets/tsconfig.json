@@ -5,7 +5,7 @@
     "rootDir": "src",
     "outDir": "build/esm",
     "tsBuildInfoFile": "build/esm/index.tsbuildinfo",
-    "lib": ["DOM"],
+    "lib": ["DOM", "ESNext"],
     "strict": false,
     "noImplicitReturns": false,
     "skipLibCheck": true,
