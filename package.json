@@ -16,7 +16,6 @@
     "build": "tsc --build tsconfig.json",
     "start": "tsc --build tsconfig.json --watch",
     "prebuild": "run-s clean",
-    "prestart": "run-s clean",
     "clean": "del packages/*/build",
     "dev": "run-s start",
     "pretest": "run-s build",
@@ -38,6 +37,6 @@
     "lerna": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.4"
   }
 }

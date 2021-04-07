@@ -8,20 +8,12 @@
   "main": "build/cjs/index.js",
   "module": "build/esm/index.js",
   "typings": "build/esm/index.d.ts",
-  "type": "module",
-  "exports": {
-    "./styles.css": "./styles.css",
-    ".": {
-      "import": "./build/esm/index.js",
-      "default": "./build/cjs/index.js"
-    }
-  },
   "engines": {
     "node": ">=12"
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "swr": "^0.5.5"
+    "swr": "^1.0.0-beta.5"
   },
   "devDependencies": {
     "@types/react": "^17.0.3",
