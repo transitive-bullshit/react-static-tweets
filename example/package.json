@@ -1,6 +1,6 @@
 {
   "name": "react-static-tweets-example",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -19,8 +19,8 @@
     "node-fetch": "^2.6.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-static-tweets": "^0.5.1",
-    "static-tweets": "^0.5.1"
+    "react-static-tweets": "^0.5.3",
+    "static-tweets": "^0.5.3"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^9.5.3",
