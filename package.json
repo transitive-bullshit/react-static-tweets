@@ -9,7 +9,8 @@
     "node": ">=12"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "example/"
   ],
   "scripts": {
     "build": "tsc --build tsconfig.json",
@@ -34,7 +35,7 @@
     "@microsoft/api-extractor": "7.8.2-pr1796.0",
     "@types/node": "^14.14.28",
     "del-cli": "^3.0.1",
-    "lerna": "^3.22.1",
+    "lerna": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "typescript": "^4.1.3"
