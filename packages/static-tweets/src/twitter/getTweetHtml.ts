@@ -1,20 +1,13 @@
 import { getVideo } from './tweet-html'
-import {
-  fetchUserStatus,
-  getEmbeddedTweetHtml,
-  fetchTweetWithPoll
-} from './api'
+import { getEmbeddedTweetHtml, fetchTweetWithPoll } from './api'
 import { fetchTweetAst } from '../fetchTweetAst'
 import markdownToAst from '../markdown/markdownToAst'
 
-function getVideoData(userStatus) {
-  const video = userStatus.extended_entities.media[0]
-  const poster = video.media_url_https
+function getVideoData(video) {
+  const poster = video.poster
   // Find the first mp4 video in the array, if the results are always properly sorted, then
   // it should always be the mp4 video with the lowest bitrate
-  const mp4Video = video.video_info.variants.find(
-    (v) => v.content_type === 'video/mp4'
-  )
+  const mp4Video = video.variants.reverse().find((v) => v.type === 'video/mp4')
 
   if (!mp4Video) return
 
@@ -27,16 +20,16 @@ function getPollData(tweet) {
 }
 
 async function getMediaHtml(tweet) {
-  let media = tweet.mediaHtml
+  let mediaHtml =
+    '<div><div class="video-container" data-type="video-container"></div></div>'
 
-  if (tweet.hasVideo) {
-    const userStatus = await fetchUserStatus(tweet.meta.id)
-    const video = userStatus && getVideoData(userStatus)
+  if (tweet.video) {
+    const video = getVideoData(tweet.video)
 
-    media = video ? getVideo(media, video) : null
+    mediaHtml = video ? getVideo(mediaHtml, video) : null
   }
 
-  return media
+  return mediaHtml
 }
 
 async function getQuotedTweetHtml({ quotedTweet }, context) {

@@ -30,9 +30,7 @@ export default async (
       .send({ error: 'missing required parameter "tweetId"' })
   }
 
-  console.log('getTweetAst', tweetId)
   const tweetAst = await fetchTweetAst(tweetId)
-  console.log('tweetAst', tweetId, tweetAst)
 
   res.status(200).json(tweetAst)
 }
