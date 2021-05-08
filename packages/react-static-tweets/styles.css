@@ -209,7 +209,7 @@
   list-style: none;
 }
 
-.static-tweet-summary::-webkit-details-marker {
+.static-tweet-summary::marker {
   display: none;
 }
 
