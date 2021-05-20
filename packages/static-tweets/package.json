@@ -23,8 +23,8 @@
     "rehype-sanitize": "3",
     "remark-parse": "7",
     "remark-rehype": "^8.0.0",
-    "unified": "8",
-    "unist-util-visit": "^2.0.3"
+    "unified": "9",
+    "unist-util-visit": "^3.0.0"
   },
   "devDependencies": {
     "ava": "^3.13.0"
