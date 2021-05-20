@@ -9,7 +9,7 @@ import schema from './schema'
 const getProcessor = unified()
   .use(parse)
   // Sanitize the HTML
-  .use(sanitize, schema)
+  .use<[typeof schema]>(sanitize, schema)
   .use(minify)
   .freeze()
 
