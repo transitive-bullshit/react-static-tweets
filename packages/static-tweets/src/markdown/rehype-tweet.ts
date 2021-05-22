@@ -1,6 +1,6 @@
 import { resolve } from 'url'
-import visit from 'unist-util-visit'
-import toString from 'mdast-util-to-string'
+import { visit } from 'unist-util-visit'
+import { toString } from 'mdast-util-to-string'
 
 const TWITTER_URL = 'https://twitter.com'
 const ABSOLUTE_URL = /^https?:\/\/|^\/\//i

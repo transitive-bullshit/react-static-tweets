@@ -2391,13 +2391,13 @@ react-refresh@0.8.3:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
-react-static-tweets@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/react-static-tweets/-/react-static-tweets-0.5.1.tgz#4628d7c3a7fa29aa1cf8ab74e5cce3812a1e8286"
-  integrity sha512-b0Rel4S5YKjHYBc7+RKsPewC1GK+eSFFoZe4kxXKeb/K1TCrTsWdlJ6pKpPmsSRX7A8x7JlAC/VOs3MXFG6rlg==
+react-static-tweets@^0.5.4:
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/react-static-tweets/-/react-static-tweets-0.5.4.tgz#3dc75f9fc50eff033ac65d85dcfec0ad1bd11888"
+  integrity sha512-7k+qq2YCum3buqfGA/jppYM9R59wnHPE4UU7Q35J6DwORnRyRVKs4RhFCSA5EjZa62ZckIzovqxe5KnftS5tbA==
   dependencies:
     classnames "^2.2.6"
-    swr "^0.5.5"
+    swr "^1.0.0-beta.5"
 
 react@^17.0.2:
   version "17.0.2"
@@ -2650,10 +2650,10 @@ state-toggle@^1.0.0:
   resolved "https://registry.yarnpkg.com/state-toggle/-/state-toggle-1.0.3.tgz#e123b16a88e143139b09c6852221bc9815917dfe"
   integrity sha512-d/5Z4/2iiCnHw6Xzghyhb+GcmF89bxwgXG60wjIiZaxnymbyOmI8Hk4VqHXiVVp6u2ysaskFfXg3ekCj4WNftQ==
 
-static-tweets@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/static-tweets/-/static-tweets-0.5.1.tgz#d840d47effe5908cb87fe6257cbe466fd0a32b9e"
-  integrity sha512-iczmufiZWIXu5zBAUEYN3DSRjqsTYO5jwx007Ak9WYkdttlrSAvi1gSdGH0b7ONC4Y3pw+yuBBtZWuFIwN30kg==
+static-tweets@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/static-tweets/-/static-tweets-0.5.3.tgz#ca65630a8cc6c84a5fa98368bafc85685eb2dcf2"
+  integrity sha512-uGjAK8iaA7lL9OngkeRIM4Dh2J8J9IUeEPmQexiwfY5ao1dU88j/HGIfqrj/HglgU9n1SuWSVoFwXWmC1Vpf2A==
   dependencies:
     "@mapbox/rehype-prism" "^0.5.0"
     "@vercel/fetch" "^6.1.0"
@@ -2819,10 +2819,10 @@ supports-color@^8.0.0:
   dependencies:
     has-flag "^4.0.0"
 
-swr@^0.5.5:
-  version "0.5.5"
-  resolved "https://registry.yarnpkg.com/swr/-/swr-0.5.5.tgz#c72c1615765f33570a16bbb13699e3ac87eaaa3a"
-  integrity sha512-u4mUorK9Ipt+6LEITvWRWiRWAQjAysI6cHxbMmMV1dIdDzxMnswWo1CyGoyBHXX91CchxcuoqgFZ/ycx+YfhCA==
+swr@^1.0.0-beta.5:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-1.0.0-beta.6.tgz#368825bbafc4cf4788fca93f47d64cc8884f24f3"
+  integrity sha512-aPl7v5/R7RSzvbI67BgUCOsOfbJ4fJEuEBU8LKzLkJGuvLiRBcYaPxt4UE7YLs2o9WEIx5FVhphJS2fOWd4RwA==
   dependencies:
     dequal "2.0.2"
 

@@ -9,7 +9,7 @@ import schema from './schema'
 const getProcessor = unified()
   .use(parse)
   // Sanitize the HTML
-  .use(sanitize, schema)
+  .use<[typeof schema]>(sanitize, schema)
   .use(minify)
   .freeze()
 
@@ -17,7 +17,7 @@ export default async function htmlToAst(html, context) {
   try {
     const processor = getProcessor().use(tweet, context)
     const file = await processor.process(html)
-    return file.contents
+    return file.result
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(`HTML to AST error: ${error}`)

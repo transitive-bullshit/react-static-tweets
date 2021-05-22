@@ -39,7 +39,7 @@ const processor = unified()
 export default async function markdownToAst(md) {
   try {
     const file = await processor.process(md)
-    return file.contents
+    return file.result
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(`Markdown to AST error: ${error}`)
