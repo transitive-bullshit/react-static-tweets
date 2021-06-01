@@ -27,7 +27,7 @@ const TwitterContext = createContext<TwitterContextValue>({
   swrOptions: {
     fetcher: (id) =>
       fetch(
-        `https://twitter-search.vercel.app/api/get-tweet-ast/${id}`
+        `https://syndication.twitter.com/tweets.json?ids=${id}`
       ).then((r) => r.json())
   }
 })
