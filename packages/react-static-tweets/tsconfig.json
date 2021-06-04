@@ -13,5 +13,5 @@
     "jsxFactory": "React.createElement",
     "jsxFragmentFactory": "React.Fragment"
   },
-  "include": ["src"]
+  "include": ["node_modules/microbundle/index.d.ts", "src"]
 }
