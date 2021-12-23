@@ -1,7 +1,28 @@
-import React from 'react'
+import type { ImageProps } from 'next/image'
 import Image from 'next/image'
+import React from 'react'
 
-export default function TweetHeader({ tweet }) {
+// Could be extracted outside
+// https://github.com/Microsoft/TypeScript/issues/25760#issuecomment-405931434
+type WithOptional<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
+
+
+export type TweetHeaderImageProps = WithOptional< Omit<ImageProps, 'layout'>, 'src' | 'alt' | 'height' | 'width'> & {
+  layout: "fixed" | "intrinsic" | "responsive";
+}
+
+
+export default function TweetHeader({ tweet, avatarImageProps = {} as TweetHeaderImageProps }: {
+  tweet: {
+    name: string;
+    username: string;
+    id: string;
+    avatar: {
+      normal: string;
+    }
+  },
+  avatarImageProps?: TweetHeaderImageProps
+}) {
   const authorUrl = `https://twitter.com/${tweet.username}`
   const tweetUrl = `https://twitter.com/${tweet.username}/status/${tweet.id}`
   const avatar = tweet.avatar.normal
@@ -20,6 +41,7 @@ export default function TweetHeader({ tweet }) {
           alt={tweet.name}
           height={36}
           width={36}
+          {...avatarImageProps}
         />
       </a>
 
