@@ -19,7 +19,7 @@ export const Img = ({ width, height, src, ...p }) => {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <img {...p} src={`${src}&name=small`} />
+          <img {...p} className='bare' src={`${src}&name=small`} />
         </a>
       </summary>
     </details>
