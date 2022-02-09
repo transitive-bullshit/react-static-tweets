@@ -3,7 +3,7 @@ import cs from 'classnames'
 import useSWR from 'swr'
 
 import { useTwitterContext } from './twitter'
-import Node from './html/node'
+import Node from './html/node.next'
 import components from './twitter-layout/components/next'
 
 type TweetProps = {
