@@ -7,7 +7,7 @@ import { Ul, Ol, Li } from './lists'
 import { Table, Th, Td } from './table'
 import { Img } from './media.next'
 import { Mention, Hashtag, Cashtag, Emoji, Poll } from './twitter'
-import Tweet from './tweet/tweet'
+import Tweet from './tweet/tweet.next'
 import EmbeddedTweet from './embedded-tweet'
 
 export default {

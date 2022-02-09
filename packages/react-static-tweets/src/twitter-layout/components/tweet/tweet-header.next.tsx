@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 export default function TweetHeader({ tweet }) {
   const authorUrl = `https://twitter.com/${tweet.username}`
@@ -13,7 +14,7 @@ export default function TweetHeader({ tweet }) {
         target='_blank'
         rel='noopener noreferrer'
       >
-        <img
+        <Image
           className='static-tweet-header-rounded'
           src={avatar}
           alt={tweet.name}
