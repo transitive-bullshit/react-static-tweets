@@ -18,7 +18,6 @@
     "prebuild": "run-s clean",
     "clean": "del packages/*/build && del packages/*/node_modules/.cache",
     "dev": "run-s start",
-    "pretest": "run-s build",
     "test": "run-s test:*",
     "test:prettier": "prettier '**/*.{js,jsx,json,ts,tsx}' --check",
     "docs": "run-s docs:extract docs:generate",

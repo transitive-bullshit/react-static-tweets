@@ -8,7 +8,7 @@
 
 > Extremely fast static renderer for tweets.
 
-[![NPM](https://img.shields.io/npm/v/react-static-tweets.svg)](https://www.npmjs.com/package/react-static-tweets) [![Build Status](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/build.yml/badge.svg)](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/build.yml) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
+[![NPM](https://img.shields.io/npm/v/react-static-tweets.svg)](https://www.npmjs.com/package/react-static-tweets) [![Build Status](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/test.yml/badge.svg)](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/test.yml) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
 ## Why?
 
@@ -49,8 +49,8 @@ For more optimized SSR usage, you'll want to pre-fetch the tweet AST data server
 
 ```tsx
 import React from 'react'
-import { fetchTweetAst } from 'static-tweets'
-import { Tweet } from 'react-static-tweets'
+import { value fetchTweetAst } from 'static-tweets'
+import { value Tweet } from 'react-static-tweets'
 
 const tweetId = '1358199505280262150'
 
