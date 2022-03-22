@@ -1,6 +1,6 @@
 {
   "name": "static-tweets",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "Utilities for fetching and manipulating tweet ASTs.",
   "repository": "transitive-bullshit/react-static-tweets",
   "author": "Travis Fischer <travis@transitivebullsh.it>",
@@ -30,9 +30,9 @@
   },
   "devDependencies": {
     "ava": "^3.13.0",
+    "hast-util-sanitize": "^4.0.0",
     "mdast-util-to-string": "^3.0.0",
     "microbundle": "^0.13.1",
-    "hast-util-sanitize": "^4.0.0",
     "unist-util-visit": "^3.0.0"
   }
 }
