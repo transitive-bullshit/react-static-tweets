@@ -31,11 +31,11 @@
   "devDependencies": {
     "@microsoft/api-documenter": "^7.8.28",
     "@microsoft/api-extractor": "7.8.2-pr1796.0",
-    "@types/node": "^14.14.28",
+    "@types/node": "^17.0.22",
     "del-cli": "^3.0.1",
     "lerna": "^4.0.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.2.1",
-    "typescript": "^4.2.4"
+    "prettier": "^2.6.0",
+    "typescript": "^4.6.2"
   }
 }
