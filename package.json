@@ -13,10 +13,10 @@
     "example/"
   ],
   "scripts": {
-    "build": "tsc --build tsconfig.json",
-    "start": "tsc --build tsconfig.json --watch",
+    "build": "lerna run build --parallel --scope '*static-tweets'",
+    "start": "lerna run watch --parallel --scope '*static-tweets'",
     "prebuild": "run-s clean",
-    "clean": "del packages/*/build",
+    "clean": "del packages/*/build && del packages/*/node_modules/.cache",
     "dev": "run-s start",
     "pretest": "run-s build",
     "test": "run-s test:*",
