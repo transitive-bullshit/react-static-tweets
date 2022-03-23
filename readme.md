@@ -97,11 +97,15 @@ import 'react-static-tweets/styles.css'
 
 ## Next.js Example
 
-Here's a full [Next.js example project](https://github.com/transitive-bullshit/react-static-tweets/tree/master/example) with the most important code in [`pages/[tweetId]`.tsx](https://github.com/transitive-bullshit/react-static-tweets/blob/master/example/pages/%5BtweetId%5D.tsx).
+Here is an [example Next.js project](https://github.com/transitive-bullshit/react-static-tweets/tree/master/example), with the most important code in [`pages/[tweetId]`.tsx](https://github.com/transitive-bullshit/react-static-tweets/blob/master/example/pages/%5BtweetId%5D.tsx). You can view this example [live on Vercel](https://react-static-tweets.vercel.app)
 
-You can check out an [example hosted live on Vercel](https://react-static-tweets.vercel.app). A more in-depth example via [twitter search](https://twitter-search.vercel.app) which provides an Algolia search UI on top of my personal twitter history ([@transitive_bs](https://twitter.com/transitive_bs)).
+Here is a [demo page](https://react-notion-x-demo.transitivebullsh.it/7b7f063709034186adbfb46f455d5065) which shows how different types of tweets render.
 
-For an example of more advanced usage and customization, check out [nextjs-notion-starter-kit](https://github.com/transitive-bullshit/nextjs-notion-starter-kit/blob/main/components/NotionPage.tsx#L164).
+For more advanced exammples, check out:
+
+- [twitter search](https://twitter-search.vercel.app) - An Algolia search UI on top of my twitter history ([@transitive_bs](https://twitter.com/transitive_bs)).
+- [react-notion-x](https://github.com/NotionX/react-notion-x) - A React renderer for Notion with batteries included. ([demo of tweet embedding](<(https://react-notion-x-demo.transitivebullsh.it/7b7f063709034186adbfb46f455d5065)>))
+- [nextjs-notion-starter-kit](https://github.com/transitive-bullshit/nextjs-notion-starter-kit/blob/c7d572ed58d49d2c3f6a7245a1f1edc8929e96df/components/NotionPage.tsx#L167) - Production-ready starter kit for building websites with Notion, including static tweet embeds.
 
 ## Packages
 
