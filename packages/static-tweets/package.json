@@ -9,12 +9,16 @@
   "main": "./build/index.js",
   "module": "./build/index.module.js",
   "typings": "./build/index.d.ts",
+  "exports": {
+    "require": "build/index.js",
+    "default": "build/index.module.js"
+  },
   "engines": {
     "node": ">=12"
   },
   "scripts": {
-    "build": "microbundle -f cjs,esm --target node --no-compress",
-    "watch": "microbundle -f cjs,esm --target node --watch"
+    "build": "microbundle -f cjs,esm --no-compress --target node",
+    "watch": "microbundle -f cjs,esm --no-compress --watch"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.5.0",

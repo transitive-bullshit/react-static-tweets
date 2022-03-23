@@ -8,12 +8,16 @@
   "main": "build/index.js",
   "module": "build/index.module.js",
   "typings": "build/index.d.ts",
+  "exports": {
+    "require": "build/index.js",
+    "default": "build/index.module.js"
+  },
   "engines": {
     "node": ">=12"
   },
   "scripts": {
     "build": "microbundle -f cjs,esm --no-compress --tsconfig ./tsconfig.json",
-    "watch": "microbundle -f cjs,esm --watch"
+    "watch": "microbundle -f cjs,esm --no-compress --watch"
   },
   "dependencies": {
     "classnames": "^2.2.6",
