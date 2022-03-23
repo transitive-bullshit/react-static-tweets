@@ -104,7 +104,7 @@ Here is a [live demo](https://react-notion-x-demo.transitivebullsh.it/7b7f063709
 For more advanced exammples, check out:
 
 - [twitter search](https://twitter-search.vercel.app) - An Algolia search UI on top of my twitter history ([@transitive_bs](https://twitter.com/transitive_bs)).
-- [react-notion-x](https://github.com/NotionX/react-notion-x) - A React renderer for Notion with batteries included. ([demo of tweet embedding](<(https://react-notion-x-demo.transitivebullsh.it/7b7f063709034186adbfb46f455d5065)>))
+- [react-notion-x](https://github.com/NotionX/react-notion-x) - A React renderer for Notion with batteries included. ([demo of tweet embedding](https://react-notion-x-demo.transitivebullsh.it/7b7f063709034186adbfb46f455d5065))
 - [nextjs-notion-starter-kit](https://github.com/transitive-bullshit/nextjs-notion-starter-kit/blob/c7d572ed58d49d2c3f6a7245a1f1edc8929e96df/components/NotionPage.tsx#L167) - Production-ready starter kit for building websites with Notion, including static tweet embeds.
 
 ## Packages
