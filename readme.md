@@ -97,9 +97,9 @@ import 'react-static-tweets/styles.css'
 
 ## Next.js Example
 
-Here is an [example Next.js project](https://github.com/transitive-bullshit/react-static-tweets/tree/master/example), with the most important code in [`pages/[tweetId]`.tsx](https://github.com/transitive-bullshit/react-static-tweets/blob/master/example/pages/%5BtweetId%5D.tsx). You can view this example [live on Vercel](https://react-static-tweets.vercel.app)
+Here is an [example Next.js project](https://github.com/transitive-bullshit/react-static-tweets/tree/master/example), with the most important code in [`pages/[tweetId]`.tsx](https://github.com/transitive-bullshit/react-static-tweets/blob/master/example/pages/%5BtweetId%5D.tsx). You can view this example [live on Vercel](https://react-static-tweets.vercel.app).
 
-Here is a [demo page](https://react-notion-x-demo.transitivebullsh.it/7b7f063709034186adbfb46f455d5065) which shows how different types of tweets render.
+Here is a [live demo](https://react-notion-x-demo.transitivebullsh.it/7b7f063709034186adbfb46f455d5065) showing how different types of tweets render.
 
 For more advanced exammples, check out:
 
