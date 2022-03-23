@@ -5,13 +5,9 @@
   "repository": "transitive-bullshit/react-static-tweets",
   "author": "Travis Fischer <travis@transitivebullsh.it>",
   "license": "MIT",
-  "main": "build/index.js",
-  "module": "build/index.module.js",
-  "typings": "build/index.d.ts",
-  "exports": {
-    "require": "build/index.js",
-    "default": "build/index.module.js"
-  },
+  "main": "./build/index.js",
+  "module": "./build/index.module.js",
+  "typings": "./build/index.d.ts",
   "engines": {
     "node": ">=12"
   },

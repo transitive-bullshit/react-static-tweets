@@ -9,10 +9,6 @@
   "main": "./build/index.js",
   "module": "./build/index.module.js",
   "typings": "./build/index.d.ts",
-  "exports": {
-    "require": "build/index.js",
-    "default": "build/index.module.js"
-  },
   "engines": {
     "node": ">=12"
   },
