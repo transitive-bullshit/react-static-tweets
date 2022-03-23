@@ -4,10 +4,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   images: {
-    domains: ['pbs.twimg.com']
+    domains: ['pbs.twimg.com'],
+    formats: ['image/avif', 'image/webp']
   }
-  // if you want to test webpack 5 support
-  // future: {
-  //   webpack5: true
-  // }
 })
