@@ -35,7 +35,7 @@ For more optimized SSR usage, you'll want to pre-fetch the tweet AST data server
 
 ```tsx
 import React from 'react'
-import [ fetchTweetAst } from 'static-tweets'
+import { fetchTweetAst } from 'static-tweets'
 import { Tweet } from 'react-static-tweets'
 
 const tweetId = '1358199505280262150'
