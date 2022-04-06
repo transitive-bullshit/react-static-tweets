@@ -13,8 +13,8 @@
     "example/"
   ],
   "scripts": {
-    "build": "lerna run build --parallel --scope '*static-tweets'",
-    "start": "lerna run watch --parallel --scope '*static-tweets'",
+    "build": "lerna run build --parallel --no-private",
+    "start": "lerna run watch --parallel --no-private",
     "prebuild": "run-s clean",
     "clean": "del packages/*/build && del packages/*/node_modules/.cache",
     "dev": "run-s start",

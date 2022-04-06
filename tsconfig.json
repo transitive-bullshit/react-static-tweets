@@ -6,8 +6,6 @@
   "include": [],
   "references": [
     { "path": "./packages/static-tweets/tsconfig.json" },
-    { "path": "./packages/static-tweets/tsconfig.cjs.json" },
-    { "path": "./packages/react-static-tweets/tsconfig.json" },
-    { "path": "./packages/react-static-tweets/tsconfig.cjs.json" }
+    { "path": "./packages/react-static-tweets/tsconfig.json" }
   ]
 }

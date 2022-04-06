@@ -8,11 +8,12 @@
   "main": "./build/index.js",
   "module": "./build/index.module.js",
   "typings": "./build/index.d.ts",
+  "sideEffects": false,
   "engines": {
     "node": ">=12"
   },
   "scripts": {
-    "build": "microbundle -f cjs,esm --no-compress --tsconfig ./tsconfig.json",
+    "build": "microbundle -f cjs,esm --no-compress",
     "watch": "microbundle -f cjs,esm --no-compress --watch"
   },
   "dependencies": {
