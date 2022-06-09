@@ -213,6 +213,10 @@
   display: none;
 }
 
+.static-tweet-summary img.bare {
+  object-fit: cover;
+}
+
 .static-tweet-table-container {
   display: flex;
   justify-content: center;
