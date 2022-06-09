@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useContext } from 'react'
-import { ConfigInterface } from 'swr'
+import { SWRConfiguration } from 'swr'
 
 // TODO: make this more specific
 export type TweetAst = Array<any>
@@ -9,7 +9,7 @@ export type TwitterContextValue = {
   tweetAstMap: TweetAstMap
 
   // SWR config for dynamically fetching tweet ast info
-  swrOptions: ConfigInterface
+  swrOptions: SWRConfiguration
 }
 
 export type TweetAstMap = {
