@@ -18,11 +18,10 @@ type TweetProps = {
 const Tweet = forwardRef<HTMLElement, TweetProps>(
   ({ id, ast, caption, className }: TweetProps, ref) => {
     const twitter = useTwitterContext()
-    const { data: tweetAst } = useSWR(
-      id,
-      (id) => ast || twitter.tweetAstMap[id] || twitter.swrOptions.fetcher(id),
-      twitter.swrOptions
-    )
+    const { data: tweetAst } = useSWR(id, twitter.swrOptions.fetcher, {
+      ...twitter.swrOptions,
+      fallbackData: ast || twitter.tweetAstMap[id]
+    })
 
     return (
       <article ref={ref} className={cs('static-tweet', className)}>

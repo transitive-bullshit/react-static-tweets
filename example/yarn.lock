@@ -1213,10 +1213,10 @@ react-dom@^17.0.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
-react-static-tweets@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/react-static-tweets/-/react-static-tweets-0.7.1.tgz#abc051720b870dab67f3d30f009afb4287033848"
-  integrity sha512-PWimW6Wcz1KEVPLVu7selfjmC2bOSucJlNDS3L3CdoUsvtbFj+4crv/4c+lu1QcktRZRAQplkCeEBRsRjoXrjA==
+react-static-tweets@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/react-static-tweets/-/react-static-tweets-0.7.2.tgz#295c15ff5d5c1dc0039505d06986a7c49722506f"
+  integrity sha512-aHXGnMs+NVf6vW51HEee0h84iAShE3lfmTBPnYrse9uVU3QcDe+Vf8EBgCs6tmrnxl4vrGC2+1T4IKiIad9L+w==
   dependencies:
     classnames "^2.2.6"
     swr "^1.0.0-beta.5"
@@ -1358,10 +1358,10 @@ space-separated-tokens@^1.0.0:
   resolved "https://registry.yarnpkg.com/space-separated-tokens/-/space-separated-tokens-1.1.5.tgz#85f32c3d10d9682007e917414ddc5c26d1aa6899"
   integrity sha512-q/JSVd1Lptzhf5bkYm4ob4iWPjx0KiRe3sRFBNrVqbJkFaBm5vbbowy1mymoPNLRa52+oadOhJ+K49wsSeSjTA==
 
-static-tweets@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/static-tweets/-/static-tweets-0.7.1.tgz#162258d172f67d9685c3738ab026ef731cdc51e7"
-  integrity sha512-Jk9pmTXZOd+tibLvQxuQKX4txhwJIoYofco+R7v6wEctwIFFWxvwP5WpQdPRLWCRb4/l8EuWPiXqTt5TxbYRAg==
+static-tweets@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/static-tweets/-/static-tweets-0.7.2.tgz#d0bb8262856be600775562c05fd10ea3aedbbe9f"
+  integrity sha512-AyZOOOyAZ8UInonVsaOImQ5zcUfrFOhhV/UpnaecJ2joG7clG7I9Y5Uj9fJeYFE+QZaWQfsJQdJCUFaabzfQjQ==
   dependencies:
     "@mapbox/rehype-prism" "^0.5.0"
     "@vercel/fetch" "^6.1.0"
