@@ -5,7 +5,9 @@ const fetch = vercelFetch()
 const QUERY = 'javascript'
 const LANG = 'en'
 
-export default async function getTweets(req, res) {
+export default async (req, res) => {
+  console.log('/api/tweets')
+
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET')
     return res.status(405).end()
