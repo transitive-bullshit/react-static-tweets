@@ -205,7 +205,7 @@ function addTweetMetadata(data, tweet) {
   return data
 }
 
-export function getVideo(html, { poster, url }) {
+export function getVideo(html, { poster, src }) {
   const $ = cheerio.load(html, {
     decodeEntities: false,
     xmlMode: false
@@ -213,7 +213,7 @@ export function getVideo(html, { poster, url }) {
   const container = $('[data-type=video-container]')
   const video = $(
     `<video poster="${poster}" controls preload="none" playsinline>`
-  ).append(`<source src="${url}" type="video/mp4">`)
+  ).append(`<source src="${src}" type="video/mp4">`)
 
   return $('<div>').append(container.append(video)).html()
 }

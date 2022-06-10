@@ -192,7 +192,8 @@ function getTweetContent($) {
   content.html = tweetContent.html()
 
   if (quotedTweet) content.quotedTweet = quotedTweet
-  if (mediaHtml) content.mediaHtml = mediaHtml
+  if (mediaHtml)
+    content.mediaHtml = mediaHtml || $('<div>').append($('<div>')).html()
 
   return content
 }
