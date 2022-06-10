@@ -1,26 +1,13 @@
 import { defineConfig, Options } from 'tsup'
 
-const baseConfig: Options = {
+export default defineConfig({
   entry: ['src/index.ts'],
   outDir: 'build',
   target: 'es2015',
   platform: 'browser',
   format: ['esm'],
   splitting: false,
+  sourcemap: true,
+  minify: false,
   shims: false
-}
-
-export default defineConfig([
-  {
-    ...baseConfig,
-    outDir: 'build/dev',
-    minify: false,
-    sourcemap: true
-  },
-  {
-    ...baseConfig,
-    outDir: 'build',
-    minify: false,
-    sourcemap: false
-  }
-])
+})

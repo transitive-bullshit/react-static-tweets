@@ -77,6 +77,7 @@ export function RandomTweet({ initialId }) {
             <>&#x21BA; Click here to get a random tweet</>
           )}
         </button>
+
         {error && <span>⚠️ Error: {error.message}. Please try again</span>}
       </div>
     </div>
