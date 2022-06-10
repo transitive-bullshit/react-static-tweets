@@ -1,5 +1,5 @@
 import React from 'react'
-import cs from 'classnames'
+import cs from 'clsx'
 
 const PROTOCOL = /^(https?:|)\/\//
 

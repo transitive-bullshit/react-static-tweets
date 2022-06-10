@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import cs from 'classnames'
+import cs from 'clsx'
 import useSWR from 'swr'
 
 import { useTwitterContext } from './twitter'
@@ -18,10 +18,16 @@ type TweetProps = {
 const Tweet = forwardRef<HTMLElement, TweetProps>(
   ({ id, ast, caption, className }: TweetProps, ref) => {
     const twitter = useTwitterContext()
-    const { data: tweetAst } = useSWR(id, twitter.swrOptions.fetcher, {
-      ...twitter.swrOptions,
-      fallbackData: ast || twitter.tweetAstMap[id]
-    })
+    const syncTweetAst = ast || twitter.tweetAstMap[id]
+    const { data: tweetAst } = useSWR(
+      syncTweetAst ? null : id,
+      twitter.swrOptions.fetcher,
+      {
+        ...twitter.swrOptions,
+        isPaused: () => !!syncTweetAst,
+        fallbackData: syncTweetAst
+      }
+    )
 
     return (
       <article ref={ref} className={cs('static-tweet', className)}>
@@ -29,9 +35,7 @@ const Tweet = forwardRef<HTMLElement, TweetProps>(
           <>
             <Node components={components} node={tweetAst[0]} />
 
-            {caption != null ? (
-              <p className='static-tweet-caption'>{caption}</p>
-            ) : null}
+            {caption && <p className='static-tweet-caption'>{caption}</p>}
           </>
         )}
       </article>

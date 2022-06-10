@@ -1,5 +1,5 @@
 import React from 'react'
-import cs from 'classnames'
+import cs from 'clsx'
 
 export const P = ({ className = undefined, ...p }) => (
   <p className='static-tweet-p' {...p} />

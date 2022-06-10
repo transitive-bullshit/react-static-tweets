@@ -13,28 +13,30 @@
     "example/"
   ],
   "scripts": {
-    "build": "lerna run build --parallel --no-private",
-    "start": "lerna run watch --parallel --no-private",
+    "build": "run-s build:*",
+    "build:tsc": "tsc --build",
+    "build:tsup": "lerna run build --no-private",
+    "watch": "run-p watch:* --continue-on-error",
+    "watch:tsc": "tsc --build --watch  --preserveWatchOutput",
+    "watch:tsup": "lerna run watch --no-private --parallel",
     "prebuild": "run-s clean",
-    "clean": "del packages/*/build && del packages/*/node_modules/.cache",
-    "dev": "run-s start",
+    "prewatch": "run-s clean",
+    "dev": "run-s watch",
+    "start": "run-s watch",
+    "clean": "del packages/*/build",
     "test": "run-s test:*",
     "test:prettier": "prettier '**/*.{js,jsx,json,ts,tsx}' --check",
-    "docs": "run-s docs:extract docs:generate",
-    "docs:extract": "lerna exec --ignore react-static-tweets --ignore react-static-tweets-example api-extractor run",
-    "docs:generate": "api-documenter markdown -i build -o docs",
     "publish": "lerna publish",
     "bootstrap": "lerna bootstrap",
     "postinstall": "run-s bootstrap"
   },
   "devDependencies": {
-    "@microsoft/api-documenter": "^7.8.28",
-    "@microsoft/api-extractor": "7.8.2-pr1796.0",
     "@types/node": "^17.0.22",
-    "del-cli": "^3.0.1",
+    "del-cli": "^4.0.1",
     "lerna": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.6.0",
+    "tsup": "^6.1.0",
     "typescript": "^4.6.2"
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import cs from 'classnames'
+import cs from 'clsx'
 import format from 'date-fns/format'
 
 import formatNumber from '../../../format-number'

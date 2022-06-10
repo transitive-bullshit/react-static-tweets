@@ -1,7 +1,9 @@
-import fetch from '../fetch'
+import https from 'node:https'
+import got from 'got'
 
 const API_URL = 'https://api.twitter.com'
 const SYNDICATION_URL = 'https://syndication.twitter.com'
+const agent = new https.Agent({ maxCachedSessions: 0 })
 
 function twitterLabsEnabled(expansions) {
   if (process.env.TWITTER_LABS_ENABLED !== 'true') return false
@@ -12,15 +14,19 @@ function twitterLabsEnabled(expansions) {
   return exp.includes(expansions)
 }
 
+async function get(url: string, opts?: any) {
+  // twitter's syndication API has some weird bugs with TLS, so we're explicitly
+  // disabling TLS session reuse as a workaround
+  // @see https://github.com/transitive-bullshit/react-static-tweets/issues/43
+  const res = await got(url, {
+    ...opts,
+    agent: { https: agent }
+  })
+  return JSON.parse(res.body)
+}
+
 export async function fetchTweetsHtml(ids) {
-  const res = await fetch(`${SYNDICATION_URL}/tweets.json?ids=${ids}`)
-
-  if (res.ok) return res.json()
-  if (res.status === 404) return {}
-
-  throw new Error(
-    `Fetch for the embedded tweets of "${ids}" failed with code: ${res.status}`
-  )
+  return get(`${SYNDICATION_URL}/tweets.json?ids=${ids}`)
 }
 
 export async function fetchTweetHtml(id) {
@@ -30,9 +36,9 @@ export async function fetchTweetHtml(id) {
 
 export async function fetchUserStatus(tweetId) {
   // If there isn't an API token don't do anything, this is only required for videos.
-  if (!process.env.TWITTER_ACCESS_TOKEN) return
+  if (!process.env.TWITTER_ACCESS_TOKEN) return null
 
-  const res = await fetch(
+  return get(
     `${API_URL}/1.1/statuses/show/${tweetId}.json?include_entities=true&tweet_mode=extended`,
     {
       headers: {
@@ -40,24 +46,6 @@ export async function fetchUserStatus(tweetId) {
       }
     }
   )
-
-  console.log(
-    'Twitter x-rate-limit-limit:',
-    res.headers.get('x-rate-limit-limit')
-  )
-  console.log(
-    'Twitter x-rate-limit-remaining:',
-    res.headers.get('x-rate-limit-remaining')
-  )
-  console.log(
-    'Twitter x-rate-limit-reset:',
-    res.headers.get('x-rate-limit-reset')
-  )
-
-  if (res.ok) return res.json()
-  if (res.status === 404) return
-
-  throw new Error(`Fetch to the Twitter API failed with code: ${res.status}`)
 }
 
 export async function fetchTweetWithPoll(tweetId) {
@@ -66,9 +54,9 @@ export async function fetchTweetWithPoll(tweetId) {
   // If there isn't an API token or Twitter Labs is not enabled, don't do anything,
   // this is only required for Polls.
   if (!process.env.TWITTER_ACCESS_TOKEN || !twitterLabsEnabled(expansions))
-    return
+    return null
 
-  const res = await fetch(
+  return get(
     `${API_URL}/labs/1/tweets?format=compact&expansions=${expansions}&ids=${tweetId}`,
     {
       headers: {
@@ -76,33 +64,8 @@ export async function fetchTweetWithPoll(tweetId) {
       }
     }
   )
-
-  console.log(
-    'Twitter Labs x-rate-limit-limit:',
-    res.headers.get('x-rate-limit-limit')
-  )
-  console.log(
-    'Twitter Labs x-rate-limit-remaining:',
-    res.headers.get('x-rate-limit-remaining')
-  )
-  console.log(
-    'Twitter Labs x-rate-limit-reset:',
-    res.headers.get('x-rate-limit-reset')
-  )
-
-  if (res.ok) return res.json()
-  if (res.status === 404) return
-
-  throw new Error(
-    `Fetch to the Twitter Labs API failed with code: ${res.status}`
-  )
 }
 
 export async function getEmbeddedTweetHtml(url) {
-  const res = await fetch(`https://publish.twitter.com/oembed?url=${url}`)
-
-  if (res.ok) return res.json()
-  if (res.status === 404) return
-
-  throw new Error(`Fetch for embedded tweet failed with code: ${res.status}`)
+  return get(`https://publish.twitter.com/oembed?url=${url}`)
 }

@@ -3,14 +3,14 @@
   "compilerOptions": {
     "composite": true,
     "rootDir": "src",
-    "tsBuildInfoFile": "build/esm/index.tsbuildinfo",
+    "outDir": "build",
+    "tsBuildInfoFile": "build/.tsbuildinfo",
+    "emitDeclarationOnly": true,
     "lib": ["DOM"],
     "strict": false,
     "noImplicitReturns": false,
     "skipLibCheck": true,
-    "jsx": "react",
-    "jsxFactory": "React.createElement",
-    "jsxFragmentFactory": "React.Fragment"
+    "jsx": "react"
   },
-  "include": ["node_modules/microbundle/index.d.ts", "src"]
+  "include": ["src"]
 }
