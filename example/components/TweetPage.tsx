@@ -6,10 +6,10 @@ import styles from './styles.module.css'
 
 const defaultRandomTweet = '1358199505280262150'
 
-export const Page: React.FC<{ tweetId: string; tweetAst?: any }> = ({
-  tweetId,
-  tweetAst
-}) => {
+export const ExampleTweetPage: React.FC<{
+  tweetId: string
+  tweetAst?: any
+}> = ({ tweetId, tweetAst }) => {
   return (
     <>
       <div>

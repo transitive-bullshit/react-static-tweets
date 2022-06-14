@@ -32,6 +32,7 @@ export function RandomTweet({ initialId }) {
     id: initialId,
     loading: false
   } as any)
+
   const fetchTweet = async (e) => {
     e.preventDefault()
     setState({ id, loading: true })

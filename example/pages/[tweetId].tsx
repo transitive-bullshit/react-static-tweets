@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next'
 import { fetchTweetAst } from 'static-tweets'
-import { Page } from 'components/Page'
+import { ExampleTweetPage } from 'components/TweetPage'
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const tweetId = context.params.tweetId as string
@@ -8,6 +8,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   try {
     const tweetAst = await fetchTweetAst(tweetId)
     if (!tweetAst) {
+      console.warn('tweet not found', tweetId)
       return {
         notFound: true
       }
@@ -34,4 +35,4 @@ export async function getStaticPaths() {
   }
 }
 
-export default Page
+export default ExampleTweetPage

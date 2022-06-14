@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next'
 import { fetchTweetAst } from 'static-tweets'
-import { Page } from 'components/Page'
+import { ExampleTweetPage } from 'components/TweetPage'
 
 // default tweet to show on the homepage
 const tweetId = '1352687755621351425'
@@ -9,6 +9,7 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     const tweetAst = await fetchTweetAst(tweetId)
     if (!tweetAst) {
+      console.warn('tweet not found', tweetId)
       return {
         notFound: true
       }
@@ -28,4 +29,4 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default Page
+export default ExampleTweetPage

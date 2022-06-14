@@ -1,12 +1,11 @@
 import React, { forwardRef } from 'react'
 import cs from 'clsx'
-import useSWR from 'swr'
 
 import { useTwitterContext } from './twitter'
 import Node from './html/node'
 import components from './twitter-layout/components'
 
-type TweetProps = {
+interface TweetProps {
   id: string
   ast?: any
   caption?: string
@@ -18,16 +17,10 @@ type TweetProps = {
 const Tweet = forwardRef<HTMLElement, TweetProps>(
   ({ id, ast, caption, className }: TweetProps, ref) => {
     const twitter = useTwitterContext()
-    const syncTweetAst = ast || twitter.tweetAstMap[id]
-    const { data: tweetAst } = useSWR(
-      syncTweetAst ? null : id,
-      twitter.swrOptions.fetcher,
-      {
-        ...twitter.swrOptions,
-        isPaused: () => !!syncTweetAst,
-        fallbackData: syncTweetAst
-      }
-    )
+    const tweetAst = ast || twitter.tweetAstMap[id]
+    if (!tweetAst) {
+      return null
+    }
 
     return (
       <article ref={ref} className={cs('static-tweet', className)}>

@@ -502,11 +502,6 @@ depd@~1.1.2:
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
 
-dequal@2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/dequal/-/dequal-2.0.2.tgz#85ca22025e3a87e65ef75a7a437b35284a7e319d"
-  integrity sha512-q9K8BlJVxK7hQYqa6XISGmBZbtQQWVXSrRrWreHC94rMt1QL/Impruc+7p2CYSYuVIUr+YCt6hjrs1kkdJRTug==
-
 destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
@@ -1213,13 +1208,13 @@ react-dom@^17.0.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
-react-static-tweets@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/react-static-tweets/-/react-static-tweets-0.7.2.tgz#295c15ff5d5c1dc0039505d06986a7c49722506f"
-  integrity sha512-aHXGnMs+NVf6vW51HEee0h84iAShE3lfmTBPnYrse9uVU3QcDe+Vf8EBgCs6tmrnxl4vrGC2+1T4IKiIad9L+w==
+react-static-tweets@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/react-static-tweets/-/react-static-tweets-0.8.0.tgz#4f9665534db1a7691994cce9665c66cb33c62551"
+  integrity sha512-pwxc2UwOHu2bVmIB07PIu1/4eSk0houl9yYthFOOuq9E+WO56bp7O1vcpE7RVyEE3DarHfoCiOI3XCFFS+A9bg==
   dependencies:
     classnames "^2.2.6"
-    swr "^1.0.0-beta.5"
+    swr "^1.3.0"
 
 react@^17.0.2:
   version "17.0.2"
@@ -1358,10 +1353,10 @@ space-separated-tokens@^1.0.0:
   resolved "https://registry.yarnpkg.com/space-separated-tokens/-/space-separated-tokens-1.1.5.tgz#85f32c3d10d9682007e917414ddc5c26d1aa6899"
   integrity sha512-q/JSVd1Lptzhf5bkYm4ob4iWPjx0KiRe3sRFBNrVqbJkFaBm5vbbowy1mymoPNLRa52+oadOhJ+K49wsSeSjTA==
 
-static-tweets@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/static-tweets/-/static-tweets-0.7.2.tgz#d0bb8262856be600775562c05fd10ea3aedbbe9f"
-  integrity sha512-AyZOOOyAZ8UInonVsaOImQ5zcUfrFOhhV/UpnaecJ2joG7clG7I9Y5Uj9fJeYFE+QZaWQfsJQdJCUFaabzfQjQ==
+static-tweets@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/static-tweets/-/static-tweets-0.8.0.tgz#8a0f440a3b60b049756262048b15c67288b41328"
+  integrity sha512-0fl3OfhdV5AABnXwe/6oYlCntILoumJVgwvwgnVkW4+PrNqqXoQnXL86Gw/QojLuczlq6IixyWTi08/NQtVqgQ==
   dependencies:
     "@mapbox/rehype-prism" "^0.5.0"
     "@vercel/fetch" "^6.1.0"
@@ -1398,12 +1393,10 @@ supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
-swr@^1.0.0-beta.5:
-  version "1.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/swr/-/swr-1.0.0-beta.6.tgz#368825bbafc4cf4788fca93f47d64cc8884f24f3"
-  integrity sha512-aPl7v5/R7RSzvbI67BgUCOsOfbJ4fJEuEBU8LKzLkJGuvLiRBcYaPxt4UE7YLs2o9WEIx5FVhphJS2fOWd4RwA==
-  dependencies:
-    dequal "2.0.2"
+swr@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-1.3.0.tgz#c6531866a35b4db37b38b72c45a63171faf9f4e8"
+  integrity sha512-dkghQrOl2ORX9HYrMDtPa7LTVHJjCTeZoB1dqTbnnEDlSvN8JEKpYIYurDfvbQFUUS8Cg8PceFVZNkW0KNNYPw==
 
 tiny-emitter@^2.0.0:
   version "2.1.0"

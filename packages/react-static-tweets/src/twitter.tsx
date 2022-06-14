@@ -1,5 +1,4 @@
 import React, { createContext, ReactNode, useContext } from 'react'
-import { SWRConfiguration } from 'swr'
 
 // TODO: make this more specific
 export type TweetAst = Array<any>
@@ -7,9 +6,6 @@ export type TweetAst = Array<any>
 export type TwitterContextValue = {
   // static tweet ast info
   tweetAstMap: TweetAstMap
-
-  // SWR config for dynamically fetching tweet ast info
-  swrOptions: SWRConfiguration
 }
 
 export type TweetAstMap = {
@@ -23,13 +19,7 @@ export interface TwitterContextProviderProps {
 
 // Saves the tweets returned as props to the page
 const TwitterContext = createContext<TwitterContextValue>({
-  tweetAstMap: {},
-  swrOptions: {
-    fetcher: (id) =>
-      fetch(`https://twitter-search.vercel.app/api/get-tweet-ast/${id}`).then(
-        (r) => r.json()
-      )
-  }
+  tweetAstMap: {}
 })
 
 export function useTwitterContext() {
@@ -42,17 +32,13 @@ export function TwitterContextProvider({
   children
 }: TwitterContextProviderProps) {
   const currentContext = useContext(TwitterContext)
-  const { tweetAstMap, swrOptions, ...rest } = value
+  const { tweetAstMap, ...rest } = value
   const mergedContext = {
     ...currentContext,
     ...rest,
     tweetAstMap: {
       ...currentContext.tweetAstMap,
       ...tweetAstMap
-    },
-    swrOptions: {
-      ...currentContext.swrOptions,
-      ...swrOptions
     }
   }
 
