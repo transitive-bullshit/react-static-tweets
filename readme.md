@@ -163,7 +163,7 @@ Here is an [example Next.js project](./example), with the most important code in
 
 `react-static-tweets` is meant for rendering tweets as efficiently as possible. The `Tweet` component assumes that you've already pre-fetched tweet AST data ahead of time, most likely during SSR.
 
-Rendering dynamic content that contains tweets client-side is supported; however, you'll need to wrap `fetchTweetAst` in an API route since it can't be used client-side.
+Rendering dynamic tweets on the client-side is supported; however, you'll need to wrap `fetchTweetAst` in an API route since it can't be used from the browser.
 
 You can view an example of this in action via [`example/pages/dynamic/[tweetId].tsx`](./example/pages/dynamic/%5BtweetId%5D.tsx).
 
