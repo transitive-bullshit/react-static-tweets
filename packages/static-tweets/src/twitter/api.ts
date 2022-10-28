@@ -1,5 +1,5 @@
 import https from 'node:https'
-import got from 'got'
+import fetch from 'node-fetch'
 
 const API_URL = 'https://api.twitter.com'
 const SYNDICATION_URL = 'https://syndication.twitter.com'
@@ -18,11 +18,20 @@ async function get(url: string, opts?: any) {
   // twitter's syndication API has some weird bugs with TLS, so we're explicitly
   // disabling TLS session reuse as a workaround
   // @see https://github.com/transitive-bullshit/react-static-tweets/issues/43
-  const res = await got(url, {
+  const res = await fetch(url, {
     ...opts,
-    agent: { https: agent }
+    agent
   })
-  return JSON.parse(res.body)
+
+  if (res.ok) {
+    return res.json()
+  }
+
+  if (res.status === 404) {
+    return {}
+  }
+
+  throw new Error(`Twitter fetch error ${res.status} ${res.statusText}`)
 }
 
 export async function fetchTweetsHtml(ids) {

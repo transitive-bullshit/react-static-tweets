@@ -4,8 +4,7 @@
     "composite": true,
     "rootDir": "src",
     "outDir": "build",
-    "tsBuildInfoFile": "build/.tsbuildinfo",
-    "emitDeclarationOnly": true
+    "tsBuildInfoFile": "build/.tsbuildinfo"
   },
-  "include": ["src"]
+  "include": ["node_modules/microbundle/index.d.ts", "src"]
 }

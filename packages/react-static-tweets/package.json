@@ -5,12 +5,8 @@
   "repository": "transitive-bullshit/react-static-tweets",
   "author": "Travis Fischer <travis@transitivebullsh.it>",
   "license": "MIT",
-  "type": "module",
-  "exports": {
-    ".": "./build/index.js",
-    "./styles.css": "./styles.css"
-  },
-  "module": "./build/index.js",
+  "main": "./build/index.js",
+  "module": "./build/index.module.js",
   "types": "./build/index.d.ts",
   "source": "./src/index.ts",
   "sideEffects": false,
@@ -18,8 +14,8 @@
     "node": ">=12"
   },
   "scripts": {
-    "build": "tsup",
-    "watch": "tsup --watch --silent --onSuccess 'echo build successful'"
+    "build": "microbundle -f cjs,esm --no-compress",
+    "watch": "microbundle -f cjs,esm --no-compress --watch"
   },
   "dependencies": {
     "clsx": "^1.1.1"
