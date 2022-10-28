@@ -1,5 +1,6 @@
 import * as React from 'react'
 import useSWR from 'swr'
+import { useRouter } from 'next/router'
 import { Tweet } from 'react-static-tweets'
 
 /**
@@ -10,7 +11,7 @@ import { Tweet } from 'react-static-tweets'
  */
 
 // default dynamic tweet
-const tweetId = '1352687755621351425'
+const defaultTweetId = '1352687755621351425'
 
 const fetcher = (id: string) =>
   fetch(`/api/get-tweet-ast/${id}`).then((r) => r.json())
@@ -23,6 +24,9 @@ const DynamicTweet: React.FC<{ tweetId: string }> = ({ tweetId }) => {
 }
 
 export default () => {
+  const router = useRouter()
+  const tweetId = (router.query.tweetId as string) ?? defaultTweetId
+
   return (
     <div>
       <DynamicTweet tweetId={tweetId} />
