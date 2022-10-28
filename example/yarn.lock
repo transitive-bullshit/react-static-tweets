@@ -1361,10 +1361,10 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-static-tweets@^1.0.0-alpha.1:
-  version "1.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/react-static-tweets/-/react-static-tweets-1.0.0-alpha.1.tgz#07978201b1cf8d7db69331d6ff34fb3c9ee413d7"
-  integrity sha512-/QlddxFLHoDjO/s/aJGQ6yyyTLOUeLMXYoso3Jv4yZTzvSdRpGhZUJBcqmHvoX+q/Du9N8x0MgP/wyrZUamCDg==
+react-static-tweets@^1.0.0-alpha.2:
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/react-static-tweets/-/react-static-tweets-1.0.0-alpha.2.tgz#46a8c33d6286368545fdddb2a67981595df1a920"
+  integrity sha512-CwLAD5Kh+xH6CxPexuR5kkc02erx6YemJvRnouxc3FsfNeBE0EPH1H7++Jy/xoj1WQnwgFseLbyStr7fHnmziQ==
   dependencies:
     clsx "^1.1.1"
 
