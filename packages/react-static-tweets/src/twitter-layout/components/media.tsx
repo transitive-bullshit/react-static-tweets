@@ -28,6 +28,7 @@ export const Img = ({ width, height, src, ...p }) => {
             fill
             sizes='100vw'
             style={{
+              width: '100%',
               objectFit: 'cover'
             }}
           />
