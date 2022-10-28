@@ -8,7 +8,7 @@
 
 > Utilities for fetching and manipulating tweet ASTs.
 
-[![NPM](https://img.shields.io/npm/v/static-tweets.svg)](https://www.npmjs.com/package/static-tweets) [![Build Status](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/build.yml/badge.svg)](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/build.yml) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
+[![NPM](https://img.shields.io/npm/v/static-tweets.svg)](https://www.npmjs.com/package/static-tweets) [![Build Status](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/test.yml/badge.svg)](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/test.yml) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
 ## Install
 
@@ -22,21 +22,22 @@ This package is compatible with Node.js.
 
 ```ts
 import [ fetchTweetAst } from 'static-tweets'
-import { Tweet } from 'react-static-tweets'
 
 const tweetId = '1358199505280262150'
+const tweetAst = await fetchTweetAst(tweetId)
 
-async function example (tweetId) {
-  const tweetAst = await fetchTweetAst(tweetId)
-
-  // tweetAst is a JSON representation of this tweet's contents
-  // which `react-static-tweets` can use to render
+// tweetAst is a JSON representation of this tweet's contents
+// which `react-static-tweets` can use to render
 }
 ```
 
+## Client-Side
+
+This package is only meant to be used on the server. If you want to render tweets dynamically on the client-side, then you'll need to wrap this package in an API route.
+
 ## Docs
 
-See the [auto-generated docs](https://github.com/transitive-bullshit/react-static-tweets/blob/master/docs/static-tweets.md).
+See the [main docs](https://github.com/transitive-bullshit/react-static-tweets).
 
 ## License
 

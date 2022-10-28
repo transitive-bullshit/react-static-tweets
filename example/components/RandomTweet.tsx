@@ -32,6 +32,7 @@ export function RandomTweet({ initialId }) {
     id: initialId,
     loading: false
   } as any)
+
   const fetchTweet = async (e) => {
     e.preventDefault()
     setState({ id, loading: true })
@@ -77,6 +78,7 @@ export function RandomTweet({ initialId }) {
             <>&#x21BA; Click here to get a random tweet</>
           )}
         </button>
+
         {error && <span>⚠️ Error: {error.message}. Please try again</span>}
       </div>
     </div>

@@ -3,7 +3,8 @@
   "compilerOptions": {
     "composite": true,
     "rootDir": "src",
-    "tsBuildInfoFile": "build/esm/index.tsbuildinfo",
+    "outDir": "build",
+    "tsBuildInfoFile": "build/.tsbuildinfo",
     "lib": ["DOM"],
     "strict": false,
     "noImplicitReturns": false,

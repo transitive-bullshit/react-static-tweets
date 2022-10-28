@@ -3,7 +3,8 @@
   "compilerOptions": {
     "composite": true,
     "rootDir": "src",
-    "tsBuildInfoFile": "build/index.tsbuildinfo"
+    "outDir": "build",
+    "tsBuildInfoFile": "build/.tsbuildinfo"
   },
-  "include": ["src"]
+  "include": ["node_modules/microbundle/index.d.ts", "src"]
 }

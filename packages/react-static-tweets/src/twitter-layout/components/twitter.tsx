@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import cs from 'classnames'
+import cs from 'clsx'
 
 import formatDistanceStrict from 'date-fns/formatDistanceStrict'
 

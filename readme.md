@@ -12,16 +12,14 @@
 
 ## Why?
 
-Twitter's embedding SDK is horribly slow and inefficient. For embedding tweets on your site (including SSR), this solution is 10-100x faster! 🔥
+Twitter's embedding SDK is horribly slow and inefficient. For embedding tweets on your site (including SSR), this solution is significantly more performant. 🔥
 
 This project takes Vercel's work on [static tweet rendering](https://static-tweet.vercel.app) and packages it up into two easy-to-use NPM packages.
 
-This project is being used in production by [super.so](https://s.super.so/x).
-
 ## Features
 
-- ⚡ **Fast** - 10-100x faster than using Twitter's iframe widget.
-- 🔥 **Solid** - Used in production by [super.so](https://s.super.so/x), [addpotion.so](https://addpotion.so), [Twitter Search](https://twitter-search.vercel.app) and [react-notion-x](https://transitivebullsh.it/nextjs-notion-starter-kit).
+- ⚡ **Fast** - 10-100x faster than using Twitter's iframe embedding.
+- 🔥 **Solid** - Used in production by [super.so](https://s.super.so/x), [react-notion-x](https://transitivebullsh.it/nextjs-notion-starter-kit), and others.
 - 🚀 **Simple** - TypeScript + React.
 
 ## Install
@@ -32,25 +30,16 @@ npm install react-static-tweets static-tweets date-fns
 yarn add react-static-tweets static-tweets date-fns
 ```
 
+Note: this project currently only works with **Next.js** (see [#2](https://github.com/transitive-bullshit/react-static-tweets/issues/2) for more info).
+
 ## Usage
 
-The easiest way to get started is to render tweets client-side (which will fetch the tweet data on-the-fly).
+You'll need to pre-fetch tweet data server-side using `fetchTweetAst` and then render it using the `Tweet` component.
 
 ```tsx
 import React from 'react'
+import { fetchTweetAst } from 'static-tweets'
 import { Tweet } from 'react-static-tweets'
-
-export default Example({ tweetId }) => (
-  <Tweet id={tweetId} />
-)
-```
-
-For more optimized SSR usage, you'll want to pre-fetch the tweet AST data server-side:
-
-```tsx
-import React from 'react'
-import { value fetchTweetAst } from 'static-tweets'
-import { value Tweet } from 'react-static-tweets'
 
 const tweetId = '1358199505280262150'
 
@@ -66,7 +55,7 @@ export const getStaticProps = async () => {
       revalidate: 10
     }
   } catch (err) {
-    console.error('error fetching tweet info', err)
+    console.error('error fetching tweet', err)
 
     throw err
   }
@@ -76,6 +65,78 @@ export default function Example({ tweetId, tweetAst }) {
   return <Tweet id={tweetId} ast={tweetAst} />
 }
 ```
+
+## Advanced Usage
+
+If you have multiple tweets, then we recommend using the built-in `TwitterContextProvider` to store a map from tweet ID to tweet AST. Here's an example using this approach:
+
+```tsx
+import React from 'react'
+import pMap from 'p-map'
+import { fetchTweetAst } from 'static-tweets'
+import { Tweet, TwitterContextProvider } from 'react-static-tweets'
+
+// NOTE: You'll likely infer your list of tweets by introspecting your page's
+// content from a CMS.
+const tweetIds = [
+  '1358199505280262150',
+  '1374492662061953034',
+  '1358199505280262150'
+  // ...
+]
+
+export const getStaticProps = async () => {
+  try {
+    // Fetch all tweet ASTs statically
+    const tweetAsts = await pMap(tweetIds, fetchTweetAst, {
+      concurrency: 4
+    })
+
+    // Create a map from tweet ID to tweet AST
+    const tweetAstMap = tweetIds.reduce((tweetId, map, index) => ({
+      ...map,
+      [tweetId]: tweetAsts[index]
+    }))
+
+    return {
+      props: {
+        tweetAstMap
+      },
+      revalidate: 60
+    }
+  } catch (err) {
+    console.error('error fetching tweets', err)
+
+    throw err
+  }
+}
+
+export default function Example({ tweetAstMap }) {
+  return (
+    <TwitterContextProvider value={{ tweetAstMap }}>
+      {tweetIds.map((tweetId) => (
+        <div key={tweetId}>
+          {/* 
+          There's no need to pass the tweet AST directly if it is provided via TwitterContextProvider. This is nice in situations where you're 
+          rendering tweets in deeply nested component trees.
+          */}
+          <Tweet id={tweetId} />
+        </div>
+      ))}
+    </TwitterContextProvider>
+  )
+}
+```
+
+## Styles
+
+You'll need to import some CSS styles as well. For Next.js, we recommend you put these in `pages/_app`:
+
+```ts
+import 'react-static-tweets/styles.css'
+```
+
+## Next.js Config
 
 Add `pbs.twimg.com` to your `next.config.js` since we use `next/image` to load images.
 
@@ -87,32 +148,24 @@ module.exports = {
 }
 ```
 
-## Styles
-
-You'll need to import some CSS styles as well. If you're using Next.js, we recommend you put these in `pages/_app`:
-
-```ts
-import 'react-static-tweets/styles.css'
-```
-
 ## Next.js Example
 
-Here is an [example Next.js project](https://github.com/transitive-bullshit/react-static-tweets/tree/master/example), with the most important code in [`pages/[tweetId]`.tsx](https://github.com/transitive-bullshit/react-static-tweets/blob/master/example/pages/%5BtweetId%5D.tsx). You can view this example [live on Vercel](https://react-static-tweets.vercel.app).
-
-Here is a [live demo](https://react-notion-x-demo.transitivebullsh.it/7b7f063709034186adbfb46f455d5065) showing how different types of tweets render.
-
-For more advanced exammples, check out:
-
-- [twitter search](https://twitter-search.vercel.app) - An Algolia search UI on top of my twitter history ([@transitive_bs](https://twitter.com/transitive_bs)).
-- [react-notion-x](https://github.com/NotionX/react-notion-x) - A React renderer for Notion with batteries included. ([tweet embed demo](https://react-notion-x-demo.transitivebullsh.it/7b7f063709034186adbfb46f455d5065))
-- [nextjs-notion-starter-kit](https://github.com/transitive-bullshit/nextjs-notion-starter-kit/blob/c7d572ed58d49d2c3f6a7245a1f1edc8929e96df/components/NotionPage.tsx#L167) - Production-ready starter kit for building websites with Notion, including static tweet embeds.
+Here is an [example Next.js project](./example), with the most important code in [`pages/[tweetId].tsx`](./example/pages/%5BtweetId%5D.tsx). You can view this example [live on Vercel](https://react-static-tweets.vercel.app).
 
 ## Packages
 
-| Package                                               | NPM                                                                                                               | Docs                                   | Environment   | Description                     |
-| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------------- | ------------------------------- |
-| [react-static-tweets](./packages/react-static-tweets) | [![NPM](https://img.shields.io/npm/v/react-static-tweets.svg)](https://www.npmjs.com/package/react-static-tweets) | [docs](./packages/react-static-tweets) | Browser + SSR | Fast React renderer for Tweets. |
-| [static-tweets](./packages/static-tweets)             | [![NPM](https://img.shields.io/npm/v/static-tweets.svg)](https://www.npmjs.com/package/static-tweets)             | [docs](./docs/static-tweets.md)        | Node.js       | Fetches tweet ASTs.             |
+| Package                                               | NPM                                                                                                               | Environment   | Description                             |
+| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------- | --------------------------------------- |
+| [static-tweets](./packages/static-tweets)             | [![NPM](https://img.shields.io/npm/v/static-tweets.svg)](https://www.npmjs.com/package/static-tweets)             | Node.js       | Fetches tweet ASTs.                     |
+| [react-static-tweets](./packages/react-static-tweets) | [![NPM](https://img.shields.io/npm/v/react-static-tweets.svg)](https://www.npmjs.com/package/react-static-tweets) | Browser + SSR | React renderer for tweets given an AST. |
+
+## Dynamic Client-Side Rendering
+
+`react-static-tweets` is meant for rendering tweets as efficiently as possible. The `Tweet` component assumes that you've already pre-fetched tweet AST data ahead of time, most likely during SSR.
+
+Rendering dynamic tweets on the client-side is supported; however, you'll need to wrap `fetchTweetAst` in an API route since it can't be used from the browser.
+
+You can view an example of this in action via [`example/pages/dynamic/[tweetId].tsx`](./example/pages/dynamic/%5BtweetId%5D.tsx).
 
 ## Credit
 
