@@ -1,6 +1,6 @@
 {
   "name": "react-static-tweets-example",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -19,8 +19,8 @@
     "node-fetch": "^2.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-static-tweets": "^1.0.0-alpha.0",
-    "static-tweets": "^0.8.0",
+    "react-static-tweets": "^1.0.0-alpha.1",
+    "static-tweets": "^1.0.0-alpha.1",
     "swr": "^1.3.0"
   },
   "devDependencies": {
