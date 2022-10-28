@@ -1,5 +1,4 @@
 import React from 'react'
-// import dynamic from 'next/dynamic' // TODO
 import Image from 'next/image'
 import { useTweet } from './tweet/tweet'
 
@@ -24,9 +23,13 @@ export const Img = ({ width, height, src, ...p }) => {
           <Image
             {...p}
             src={`${src}&name=small`}
-            layout='fill'
-            objectFit='cover'
             quality={80}
+            alt={`Image from ${tweetUrl}`}
+            fill
+            sizes='100vw'
+            style={{
+              objectFit: 'cover'
+            }}
           />
         </a>
       </summary>
