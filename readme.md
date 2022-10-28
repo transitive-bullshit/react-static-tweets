@@ -10,6 +10,10 @@
 
 [![NPM](https://img.shields.io/npm/v/react-static-tweets.svg)](https://www.npmjs.com/package/react-static-tweets) [![Build Status](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/test.yml/badge.svg)](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/test.yml) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
+## Demo
+
+Visit [react-static-tweets.vercel.app](https://react-static-tweets.vercel.app/1352687755621351425) and append your tweet ID. You can also append `/dynamic/<tweetId>` if you want to test the non-SSR version.
+
 ## Why?
 
 Twitter's embedding SDK is horribly slow and inefficient. For embedding tweets on your site (including SSR), this solution is significantly more performant. 🔥
