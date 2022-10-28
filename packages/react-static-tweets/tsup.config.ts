@@ -9,5 +9,6 @@ export default defineConfig({
   splitting: false,
   sourcemap: true,
   minify: false,
-  shims: false
+  shims: false,
+  external: ['next/image']
 })
