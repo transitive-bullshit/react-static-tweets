@@ -6,7 +6,10 @@
   "author": "Travis Fischer <travis@transitivebullsh.it>",
   "license": "MIT",
   "type": "module",
-  "main": "./build/index.js",
+  "exports": {
+    ".": "./build/index.js",
+    "./styles.css": "./styles.css"
+  },
   "module": "./build/index.js",
   "types": "./build/index.d.ts",
   "source": "./src/index.ts",
