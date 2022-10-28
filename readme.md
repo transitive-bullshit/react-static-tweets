@@ -165,7 +165,9 @@ Here is an [example Next.js project](./example), with the most important code in
 
 Rendering dynamic tweets on the client-side is supported; however, you'll need to wrap `fetchTweetAst` in an API route since it can't be used from the browser.
 
-You can view an example of this in action via [`example/pages/dynamic/[tweetId].tsx`](./example/pages/dynamic/%5BtweetId%5D.tsx).
+You can view an example of this in [`example/pages/dynamic/[tweetId].tsx`](./example/pages/dynamic/%5BtweetId%5D.tsx).
+
+Here is a demo of the [default static rendering](https://react-static-tweets.vercel.app/1576587821795528705) versus [dynamic client-side rendering](https://react-static-tweets.vercel.app/1576587821795528705).
 
 ## Credit
 
