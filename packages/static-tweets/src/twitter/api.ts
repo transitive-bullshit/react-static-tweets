@@ -14,7 +14,7 @@ function twitterLabsEnabled(expansions) {
   return exp.includes(expansions)
 }
 
-async function get(url: string, opts?: any) {
+async function get(url: string, opts?: any): Promise<any> {
   // twitter's syndication API has some weird bugs with TLS, so we're explicitly
   // disabling TLS session reuse as a workaround
   // @see https://github.com/transitive-bullshit/react-static-tweets/issues/43
