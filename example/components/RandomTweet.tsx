@@ -1,8 +1,9 @@
+'use client'
+
 import React from 'react'
 import { useState } from 'react'
 import Link from 'next/link'
 
-import { A } from './anchor'
 import styles from './styles.module.css'
 
 const APP_URL = 'https://react-static-tweets.vercel.app'
@@ -55,10 +56,8 @@ export function RandomTweet({ initialId }) {
 
   return (
     <div className={styles['random-tweet-container']}>
-      <Link href='/[tweet]' as={`/${id}`} passHref>
-        <A blank={false}>
-          {APP_URL}/<span className={success ? styles.id : null}>{id}</span>
-        </A>
+      <Link href={`/${id}`}>
+        {APP_URL}/<span className={success ? styles.id : null}>{id}</span>
       </Link>
 
       <div className={styles['random-tweet']}>

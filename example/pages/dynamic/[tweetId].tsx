@@ -20,7 +20,7 @@ const DynamicTweet: React.FC<{ tweetId: string }> = ({ tweetId }) => {
   const { data: tweetAst } = useSWR(tweetId, fetcher)
   if (!tweetAst) return null
 
-  return <Tweet id={tweetId} ast={tweetAst} />
+  return <Tweet ast={tweetAst} />
 }
 
 export default () => {
