@@ -69,9 +69,13 @@ export default function Example({ tweetAst }) {
 }
 ```
 
+Note that `Tweet` is a React server component, and has been tested with Next.js 13 `appDir`.
+
 ## Advanced Usage
 
-If you have multiple tweets and are okay with using client components, then we recommend using the built-in `TwitterContextProvider` to store a map from tweet ID to tweet AST. Here's an example using this approach:
+If you have multiple tweets and are okay with using client components, then we recommend using the built-in `TwitterContextProvider` to store a map from tweet ID to tweet AST.
+
+In this example, we're using the client component imports from `react-static/tweets/client` which use React Context under the hood:
 
 ```tsx
 import React from 'react'
