@@ -49,6 +49,7 @@ function getTweetContent($) {
   meta.createdAt = new Date(fullTimestamp.attr('data-datetime')).getTime()
   meta.heartCount = heartCount.text()
   meta.ctaType = profileText.length ? 'profile' : 'conversation'
+  const tweetUrl = `https://twitter.com/${meta.username}/status/${meta.id}`
 
   if (conversationText.length) {
     // Get the formatted count and skip the rest
@@ -111,6 +112,7 @@ function getTweetContent($) {
 
           this.attribs = {
             'data-type': 'media-image',
+            'data-url': tweetUrl,
             src: `${url}?format=${format}`,
             height,
             width

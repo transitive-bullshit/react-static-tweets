@@ -8,14 +8,28 @@
   "main": "./build/index.js",
   "module": "./build/index.module.js",
   "types": "./build/index.d.ts",
-  "source": "./src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./build/index.module.js",
+      "require": "./build/index.module.js",
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    },
+    "./client": {
+      "import": "./build/client.module.js",
+      "require": "./build/client.module.js",
+      "types": "./build/client.d.ts",
+      "default": "./build/client.js"
+    },
+    "./styles.css": "./styles.css"
+  },
   "sideEffects": false,
   "engines": {
     "node": ">=12"
   },
   "scripts": {
-    "build": "microbundle -f cjs,esm --no-compress",
-    "watch": "microbundle -f cjs,esm --no-compress --watch"
+    "build": "microbundle -f cjs,esm --no-compress src/index.ts src/client.ts",
+    "watch": "microbundle -f cjs,esm --no-compress --watch src/index.ts src/client.ts"
   },
   "dependencies": {
     "clsx": "^1.1.1"

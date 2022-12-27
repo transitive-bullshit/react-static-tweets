@@ -8,14 +8,14 @@ const defaultRandomTweet = '1358199505280262150'
 
 export const ExampleTweetPage: React.FC<{
   tweetId: string
-  tweetAst?: any
-}> = ({ tweetId, tweetAst }) => {
+  tweetAst: any
+}> = ({ tweetAst }) => {
   return (
     <>
       <div>
         <h1 className={styles.title}>React Static Tweets Demo</h1>
 
-        <Tweet id={tweetId} ast={tweetAst} />
+        <Tweet ast={tweetAst} />
 
         <RandomTweet initialId={defaultRandomTweet} />
       </div>

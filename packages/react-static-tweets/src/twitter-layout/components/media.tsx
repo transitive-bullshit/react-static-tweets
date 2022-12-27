@@ -1,10 +1,20 @@
 import React from 'react'
 import Image from 'next/image'
-import { useTweet } from './tweet/tweet'
 
-export const Img = ({ width, height, src, ...p }) => {
-  const tweet = useTweet()
-  const tweetUrl = `https://twitter.com/${tweet.username}/status/${tweet.id}`
+export const Img = ({ width, height, src, dataUrl, ...p }) => {
+  const image = (
+    <Image
+      {...p}
+      src={`${src}&name=small`}
+      quality={80}
+      alt={`Tweet image ${src}`}
+      fill
+      sizes='100vw'
+      style={{
+        objectFit: 'cover'
+      }}
+    />
+  )
 
   return (
     <details className='static-tweet-details'>
@@ -14,24 +24,18 @@ export const Img = ({ width, height, src, ...p }) => {
           paddingBottom: `${(height / width) * 100 || 0}%`
         }}
       >
-        <a
-          href={tweetUrl}
-          className='avatar'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Image
-            {...p}
-            src={`${src}&name=small`}
-            quality={80}
-            alt={`Image from ${tweetUrl}`}
-            fill
-            sizes='100vw'
-            style={{
-              objectFit: 'cover'
-            }}
-          />
-        </a>
+        {dataUrl ? (
+          <a
+            href={dataUrl}
+            className='avatar'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            {image}
+          </a>
+        ) : (
+          <div className='avatar'>{image}</div>
+        )}
       </summary>
     </details>
   )

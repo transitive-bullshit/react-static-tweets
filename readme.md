@@ -53,7 +53,6 @@ export const getStaticProps = async () => {
 
     return {
       props: {
-        tweetId,
         tweetAst
       },
       revalidate: 10
@@ -65,20 +64,20 @@ export const getStaticProps = async () => {
   }
 }
 
-export default function Example({ tweetId, tweetAst }) {
-  return <Tweet id={tweetId} ast={tweetAst} />
+export default function Example({ tweetAst }) {
+  return <Tweet ast={tweetAst} />
 }
 ```
 
 ## Advanced Usage
 
-If you have multiple tweets, then we recommend using the built-in `TwitterContextProvider` to store a map from tweet ID to tweet AST. Here's an example using this approach:
+If you have multiple tweets and are okay with using client components, then we recommend using the built-in `TwitterContextProvider` to store a map from tweet ID to tweet AST. Here's an example using this approach:
 
 ```tsx
 import React from 'react'
 import pMap from 'p-map'
 import { fetchTweetAst } from 'static-tweets'
-import { Tweet, TwitterContextProvider } from 'react-static-tweets'
+import { TweetClient, TwitterContextProvider } from 'react-static-tweets/client'
 
 // NOTE: You'll likely infer your list of tweets by introspecting your page's
 // content from a CMS.
@@ -124,7 +123,7 @@ export default function Example({ tweetAstMap }) {
           There's no need to pass the tweet AST directly if it is provided via TwitterContextProvider. This is nice in situations where you're 
           rendering tweets in deeply nested component trees.
           */}
-          <Tweet id={tweetId} />
+          <TweetClient id={tweetId} />
         </div>
       ))}
     </TwitterContextProvider>
