@@ -1,6 +1,6 @@
 {
   "name": "static-tweets",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Utilities for fetching and manipulating tweet ASTs.",
   "repository": "transitive-bullshit/react-static-tweets",
   "author": "Travis Fischer <travis@transitivebullsh.it>",
