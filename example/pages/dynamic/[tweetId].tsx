@@ -1,7 +1,7 @@
 import * as React from 'react'
 import useSWR from 'swr'
 import { useRouter } from 'next/router'
-import { TweetClient } from 'react-static-tweets/client'
+import { Tweet } from 'react-static-tweets'
 
 /**
  * This example shows how you can use react-static-tweets to render dynamic
@@ -20,7 +20,7 @@ const DynamicTweet: React.FC<{ tweetId: string }> = ({ tweetId }) => {
   const { data: tweetAst } = useSWR(tweetId, fetcher)
   if (!tweetAst) return null
 
-  return <TweetClient id={tweetId} ast={tweetAst} />
+  return <Tweet ast={tweetAst} />
 }
 
 export default () => {
