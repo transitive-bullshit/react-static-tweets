@@ -21,14 +21,13 @@ This package is compatible with Node.js.
 ## Usage
 
 ```ts
-import [ fetchTweetAst } from 'static-tweets'
+import { fetchTweetAst } from 'static-tweets'
 
 const tweetId = '1358199505280262150'
 const tweetAst = await fetchTweetAst(tweetId)
 
 // tweetAst is a JSON representation of this tweet's contents
 // which `react-static-tweets` can use to render
-}
 ```
 
 ## Client-Side
