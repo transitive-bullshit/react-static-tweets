@@ -35,6 +35,12 @@
   --tweet-color-red: #e02460;
 }
 
+/* reset all styles to avoid leaks */
+.static-tweet,
+.static-tweet * {
+  all: initial;
+}
+
 .static-tweet {
   width: 100%;
   max-width: 550px;
