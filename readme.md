@@ -1,14 +1,20 @@
-<p align="center">
-  <a href="https://react-static-tweets.vercel.app/1352687755621351425">
-    <img alt="React Static Tweets" src="https://raw.githubusercontent.com/transitive-bullshit/react-static-tweets/master/example/demo.jpg" width="550">
-  </a>
-</p>
+# Deprecation Notice
+
+Vercel released [react-tweet](https://github.com/vercel/react-tweet) which is a better maintained version of this library. Please use that instead.
+
+---
 
 # React Static Tweets
 
 > Extremely fast static renderer for tweets.
 
 [![NPM](https://img.shields.io/npm/v/react-static-tweets.svg)](https://www.npmjs.com/package/react-static-tweets) [![Build Status](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/test.yml/badge.svg)](https://github.com/transitive-bullshit/react-static-tweets/actions/workflows/test.yml) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
+
+<p align="center">
+  <a href="https://react-static-tweets.vercel.app/1352687755621351425">
+    <img alt="React Static Tweets" src="https://raw.githubusercontent.com/transitive-bullshit/react-static-tweets/master/example/demo.jpg" width="550">
+  </a>
+</p>
 
 ## Demo
 
